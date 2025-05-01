@@ -9,12 +9,13 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div className='bg-gray-900'>
+   
     <Header />
     <SobreMi />
     <Tecnologias />
     <Proyectos />
-    </>
+    </div>
   )
 }
 

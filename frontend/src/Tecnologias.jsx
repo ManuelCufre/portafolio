@@ -9,34 +9,38 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaBootstrap } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
+import { FaCode } from "react-icons/fa6";
+import { DiNodejs } from "react-icons/di";
 
 export default function Tecnologias() {
     const tecnologias = [
-        { id:1, nombre: "HTML", icono: <FaHtml5 size={80} /> },
-        { id:2, nombre: "CSS", icono: <FaCss3Alt size={80} /> },
-        { id:3, nombre: "JavaScript", icono: <IoLogoJavascript size={80} /> },
-        { id:4, nombre: "Python", icono: <FaPython size={80} /> },
-        { id:5, nombre: "React.js", icono: <FaReact size={80} /> },
-        { id:6, nombre: "Express.js", icono: <SiExpress size={80} /> },
-        { id:7, nombre: "Supabase", icono: <RiSupabaseFill size={80} /> },
-        { id:8, nombre: "Tailwind.css", icono: <RiTailwindCssFill size={80} /> },
-        { id:9, nombre: "Bootstrap", icono: <FaBootstrap size={80} /> },
-        { id:10, nombre: "Git", icono: <FaGitAlt size={80} /> },
-        { id:11, nombre: "MySQL", icono: <FaDatabase size={80} /> },
+        { nombre: "HTML", icono: <FaHtml5 size={66} /> },
+        { nombre: "CSS", icono: <FaCss3Alt size={66} /> },
+        { nombre: "JavaScript", icono: <IoLogoJavascript size={66} /> },
+        { nombre: "Python", icono: <FaPython size={66} /> },
+        { nombre: "React.js", icono: <FaReact size={66} /> },
+        { nombre: "Node.js", icono: <DiNodejs size={66} /> },
+        { nombre: "Express.js", icono: <SiExpress size={66} /> },
+        { nombre: "Supabase", icono: <RiSupabaseFill size={66} /> },
+        { nombre: "Tailwind.css", icono: <RiTailwindCssFill size={66} /> },
+        { nombre: "Bootstrap", icono: <FaBootstrap size={66} /> },
+        { nombre: "Git", icono: <FaGitAlt size={66} /> },
+        { nombre: "MySQL", icono: <FaDatabase size={66} /> },
 
 
     ]
     return (
         <>
-            <div className="w-full min-h-80 flex flex-col justify-center items-center text-white bg-gray-900 fira-code">
-                <h1 className="">Tecnologías</h1>
-                <p className="text-lg text-center max-w-2xl fira-code">
-                    Aquí hay una lista de las tecnologías con las que tengo experiencia:
-                </p>
+            <div className="relative top-50 w-full  flex flex-col justify-center items-center text-white bg-gray-900 fira-code gap-8">
+            <div className="flex justify-center items-center gap-2">
+          <FaCode size={30}/>
+          <h1 className="text-l font-bold fira-code">Tecnologías</h1>
+        </div>
+                
             
-               <div className="flex flex-wrap justify-center items-center gap-4 mt-4">
+               <div className="grid grid-cols-6  gap-4 mt-4">
                {tecnologias.map((tecnologia, index) => (
-                   <div key = {tecnologia.id} className="flex flex-col items-center justify-center gap-4 w-30 h-36 bg-gray-900 text-white rounded-sm monospace hover:bg-gray-700 ">
+                   <div key = {index} className="flex flex-col items-center justify-center gap-4 w-24 h-32 bg-gray-900 text-white rounded-sm  monospace borde hover:bg-gray-700 hover:border-b-cyan-600 ">
                    {tecnologia.icono}
                    <p className="font-bold">{tecnologia.nombre}</p>
                   </div>

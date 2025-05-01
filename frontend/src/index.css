@@ -1,10 +1,26 @@
 @import "tailwindcss";
 @import 'firacode/distr/fira_code.css';
 
-.fira-code {
-    font-family: 'Fira Code', monospace;
-  }
+
 
 .monospace {
   font-family: monospace;
+}
+
+.sombra {
+  box-shadow: 0 0 5px rgb(0, 0, 0, 1);
+}
+
+.small-text {
+  font-size: 0.9rem;
+}
+
+.borde {
+  border:1px solid rgba(65, 65, 65, 0.8);
+}
+
+
+h1 {
+  font-size: 1.7rem;
+  font-family: 'Fira Code', monospace;
 }
