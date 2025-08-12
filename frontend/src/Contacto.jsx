@@ -9,8 +9,8 @@ import {
 
 export default function Contacto() {
   return (
-    <div className="relative top-90 flex flex-col w-full items-center justify-center gap-4 color-fondo-oscuro text-white">
-      <div className="min-w-4/5 flex flex-col items-center">
+    <div className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4   text-white">
+      <div className="w-full min-h-[65vh]  bg-fondo-oscuro-div flex flex-col justify-center rounded-2xl borde items-center">
         <h2>Contacto</h2>
         <Fieldset.Root size="lg" maxW="md">
           <Stack>

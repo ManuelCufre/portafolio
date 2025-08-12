@@ -32,7 +32,8 @@ export default function Tecnologias() {
   ];
   return (
     <>
-      <div className={`relative top-50 w-full  flex flex-col justify-center items-center fira-code gap-8 ${modo === 'oscuro' ? 'color-fondo-oscuro color-text-oscuro' : 'color-fondo-claro color-texto-claro'}`}>
+      <div className= 'w-[65%] min-h-[100vh] flex justify-center items-center fira-code' >
+        <div className="w-full min-h-[60vh] flex flex-col justify-center items-center bg-fondo-oscuro-div gap-8 rounded-2xl borde">
         <div className="flex justify-center items-center gap-2 color-sec">
           <FaCode size={30} />
           <h1 className="fira-code text-white">Tecnologías</h1>
@@ -48,6 +49,7 @@ export default function Tecnologias() {
               <p className="font-bold">{tecnologia.nombre}</p>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </>

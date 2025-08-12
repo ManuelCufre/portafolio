@@ -8,14 +8,14 @@ export default function Header() {
   const { modo, setModo, handleModo } = useMode();
 
   return (
-    <header className="w-full z-1000 h-16 px-10 color-fondo text-white fixed sombra flex items-center justify-center">
-      <div className="w-[70%] z-1000 h-full color-fondo flex justify-between items-center ">
-        <div className="flex justify-center items-center gap-2">
+    <header className="w-full z-1000 h-14  fixed flex items-center justify-center  text-white">
+      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8 bg-fondo-oscuro-div rounded-xl borde">
+        <div className="flex justify-center items-center gap-2 relative left-4">
           <FaCode />
           <h2 className="text-l font-bold monospace">Manuel Agustín Cufré</h2>
         </div>
-        <nav className="header__nav">
-          <ul className="flex gap-4 items-center">
+        <nav>
+          <ul className="flex gap-8 items-center relative right-4">
             <li>
               <a href="">Sobre mí</a>
             </li>

@@ -4,7 +4,6 @@ import SobreMi from './SobreMi'
 import Tecnologias from './Tecnologias'
 import Proyectos from './Proyectos'
 import Contacto from './Contacto'
-import './App.css'
 import useMode from './hooks/useMode'
 function App() {
 
@@ -12,10 +11,10 @@ function App() {
   
  
   return (
-    <div className={`${modo === 'oscuro' ? 'color-fondo-oscuro color-text-oscuro' : 'color-fondo-claro color-texto-claro'}`}>
+    <div className="bg-fondo-oscuro color-text-oscuro">
    
     <Header />
-    <div className='w-full flex flex-col items-center '>
+    <div className='w-full flex flex-col items-center bg-gray-600 bg-fondo-oscuro' >
     <SobreMi /> 
     <Tecnologias />
     <Proyectos />
