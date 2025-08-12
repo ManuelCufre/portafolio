@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import 'firacode/distr/fira_code.css';
 
-
-
 .monospace {
   font-family: monospace;
 }
@@ -16,11 +14,35 @@
 }
 
 .borde {
-  border:1px solid rgba(65, 65, 65, 0.8);
+  border:1px solid rgba(90, 90, 90, 0.8);
 }
 
+.color-fondo-oscuro {
+  background-color: #242424 ;
+}
+
+.color-texto-oscuro {
+  color: #E0E0E0;
+}
+
+.color-texto-claro {
+  color: #1f1f1f;
+}
+
+.color-sec {
+  color: #14b8a6;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
 
 h1 {
   font-size: 1.7rem;
   font-family: 'Fira Code', monospace;
+}
+
+.color-fondo-claro {
+  background-color: #dbdbdb ;
 }

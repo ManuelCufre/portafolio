@@ -3,6 +3,7 @@ import { FiGithub } from "react-icons/fi";
 import { FaCode } from "react-icons/fa6";
 import { FaReact } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import useMode from "./hooks/useMode";
 
 export default function Proyectos() {
   const proyectos = [
@@ -33,7 +34,7 @@ export default function Proyectos() {
   ];
   return (
     <>
-      <div className="relative top-70 flex flex-col w-full items-center justify-center gap-4 bg-gray-900 text-white ">
+      <div className="relative top-70 flex flex-col w-full items-center justify-center gap-4 color-fondo-oscuro text-white ">
         <div className="flex justify-center items-center gap-2">
           <FaCode />
           <h1 className=" font-bold fira-code text-color">Proyectos</h1>
@@ -43,7 +44,7 @@ export default function Proyectos() {
         </p>
         <div className="flex gap-6 flex-col w-3/5 float-center">
           {proyectos.map((proyecto) => (
-            <div className="bg-gray-900 flex gap-6 sombra" key={proyecto.id}>
+            <div className="color-fondo-oscuro flex gap-6 sombra transition-transform duration-300 hover:scale-101" key={proyecto.id}>
               <Image src={proyecto.imagen} height="300px" alt="" />
               <div className="flex flex-col justify-around">
                 <div>
@@ -53,7 +54,7 @@ export default function Proyectos() {
                     {proyecto.tec.map((t) => (
                       <a
                         href=""
-                        className="flex gap-2 bg-gray-700 items-center justify-center rounded-2xl h-6 w-24 hover:bg-gray-800 "
+                        className="flex gap-2 color-fondo-oscuro borde items-center justify-center rounded-2xl h-6 w-24 hover:bg-gray-800 "
                       >
                         {t.icono}
                         <p className="text-sm small-text">{t.nombre}</p>
