@@ -15,7 +15,7 @@ function App() {
    
     <Header />
     <div className='w-full flex flex-col items-center bg-gray-600 bg-fondo-oscuro' >
-    <SobreMi /> 
+    <SobreMi/> 
     <Tecnologias />
     <Proyectos />
     <Contacto />

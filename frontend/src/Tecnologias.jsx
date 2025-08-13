@@ -37,17 +37,21 @@ export default function Tecnologias() {
   ];
   return (
     <>
-      <div className="w-[65%] min-h-[100vh] flex flex-col justify-center items-center fira-code">
-        <h2 className="text-white bold monospace">CURRICULUM();</h2>
+      <div className="w-[65%] min-h-[100vh] flex flex-col justify-center items-center fira-code" id="curriculum">
+        <div className="flex flex-col justify-center   ">
+          <h1 className="bold monospace text-white">CURRICULUM();</h1>
+          <div className=" w-33 h-[3px] bg-teal-500 rounded-md"></div>
+        </div>
         <div className="w-full min-h-[70vh] flex justify-around items-center  gap-8 rounded-2xl">
           <div className="w-[50%] min-h-[100%] flex flex-col gap-8">
-            <div className="w-full h-[20vh] flex justify-center items-center  bg-fondo-oscuro-div f rounded-2xl text-white borde">
-              <div className="w-[90%] h-[90%] flex flex-col justify-between ">
+            {/*Sobre mi*/}
+            <div className="w-full h-[20vh] flex justify-center items-center  bg-fondo-oscuro-div f rounded-2xl text-white borde hover:border-sky-400 transition-colors duration-300">
+              <div className="w-[90%] h-[82%] flex flex-col gap-6">
                 <div className="flex items-center gap-4">
-                  <PiUserCircleLight size={26} />
-                  <h3 className="bold">Sobre mí</h3>
+                  <PiUserCircleLight size={26} className="text-teal-400"/>
+                  <h3 className="bold nata-sans ">Sobre mí</h3>
                 </div>
-                <p className="text-gray-200" style={{ fontSize: "0.9rem" }}>
+                <p className="text-gray-300 nata-sans " style={{ fontSize: "0.95rem" }}>
                   Soy un estudiante comprometido con mi aprendizaje y
                   crecimiento en el ámbito laboral. Busco formar parte de una
                   empresa donde pueda aplicar mis conocimientos, adquirir nuevas
@@ -55,26 +59,27 @@ export default function Tecnologias() {
                 </p>
               </div>
             </div>
-            <div className="w-full h-[38vh] flex justify-center items-center  bg-fondo-oscuro-div f rounded-2xl text-white borde">
-              <div className="w-[90%] h-[90%] flex flex-col justify-between ">
+             {/*Experiencia*/}
+            <div className="w-full h-[40vh] flex justify-center items-center  bg-fondo-oscuro-div f rounded-2xl text-white borde">
+              <div className="w-[90%] h-[90%] flex flex-col gap-8 ">
                 <div className="flex items-center gap-4">
-                  <IoBagOutline size={26} />
-                  <h3 className="bold">Experiencia laboral</h3>
+                  <IoBagOutline size={26} className="text-teal-400"/>
+                  <h3 className="bold nata-sans ">Experiencia laboral</h3>
                 </div>
                 <div className="flex flex-col gap-2">
                   <p
-                    className="text-gray-200 bold"
-                    style={{ fontSize: "0.9rem" }}
+                    className="text-gray-200 bold nata-sans "
+                    style={{ fontSize: "0.95rem" }}
                   >
                     AUXILIAR DE GESTIÓN DOCUMENTAL
                   </p>
                   <p
-                    className="text-gray-200 monospace"
+                    className="text-white monospace nata-sans"
                     style={{ fontSize: "0.9rem" }}
                   >
                     Pasantía en Prodeman. Octubre 2023 - Abril 2025
                   </p>
-                  <ul className="text-gray-300 " style={{ fontSize: "0.9rem" }}>
+                  <ul className="text-gray-300 nata-sans" style={{ fontSize: "0.9rem" }}>
                     <li>
                       ● Configurar usuarios, alcances y permisos en un sistema
                       de gestión de documentos.
@@ -100,11 +105,12 @@ export default function Tecnologias() {
             </div>
           </div>
           <div className="w-[50%] min-h-[100%] flex flex-col gap-8">
+             {/*Stack*/}
             <div className="w-full h-[40vh] flex justify-center items-center  bg-fondo-oscuro-div f rounded-2xl text-white borde">
-              <div className="w-[90%] h-[90%] flex flex-col justify-between ">
+              <div className="w-[90%] h-[90%] flex flex-col gap-8 ">
                 <div className="flex items-center gap-4">
-                  <PiBracketsCurly size={26} />
-                  <h3 className="bold">Stack</h3>
+                  <PiBracketsCurly size={26} className="text-teal-400"/>
+                  <h3 className="bold nata-sans">Stack</h3>
                 </div>
                 <div className="grid grid-cols-6 gap-4 mt-4">
                   {tecnologias.map((tecnologia, index) => (
@@ -119,23 +125,24 @@ export default function Tecnologias() {
                 </div>
               </div>
             </div>
-            <div className="w-full h-[18vh] flex justify-center items-center bg-fondo-oscuro-div f rounded-2xl text-white borde">
-              <div className="w-[90%] h-[90%] flex flex-col justify-between ">
+             {/*Formación*/}
+            <div className="w-full h-[20vh] flex justify-center items-center bg-fondo-oscuro-div f rounded-2xl text-white borde">
+              <div className="w-[90%] h-[82%] flex flex-col gap-6 ">
                 <div className="flex items-center gap-4">
-                  <PiGraduationCap size={22} />
-                  <h3 className="bold">Formación</h3>
+                  <PiGraduationCap size={22} className="text-teal-400"/>
+                  <h3 className="bold nata-sans">Formación</h3>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                   <p
-                    className="text-gray-200 bold"
+                    className="text-white bold nata-sans"
                     style={{ fontSize: "0.9rem" }}
                   >
                     TECNICATURA SUPERIOR EN ANALISTA DE SISTEMAS
                   </p>
-                  <p className="text-gray-200" style={{ fontSize: "0.9rem" }}>
+                  <p className="text-gray-200 nata-sans" style={{ fontSize: "0.9rem" }}>
                     Instituto Superior 25 de mayo.
                   </p>
-                  <p className="text-gray-200" style={{ fontSize: "0.9rem" }}>
+                  <p className="text-gray-200 nata-sans" style={{ fontSize: "0.9rem" }}>
                     2022 - Presente.
                   </p>
                 </div>

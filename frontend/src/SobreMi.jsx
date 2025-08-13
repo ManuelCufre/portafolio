@@ -10,7 +10,7 @@ export default function SobreMi() {
   const { modo } = useMode();
 
   return (
-    <div className="w-[65%] min-h-[100vh] flex justify-center items-center fira-code">
+    <div className="w-[65%] min-h-[100vh] flex justify-center items-center fira-code" id="inicio">
       <div className="bg-fondo-oscuro-div w-full min-h-[50vh] flex flex-col gap-8 justify-center items-center rounded-2xl borde">
         <div className="flex justify-center items-center gap-2 text-white ">
           <FaCode />

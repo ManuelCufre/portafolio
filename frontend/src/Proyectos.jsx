@@ -39,9 +39,10 @@ export default function Proyectos() {
   ];
   return (
     <>
-      <div className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 text-white ">
-        <div className="flex justify-center items-center gap-2 ">
+      <div className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 text-white " id="proyectos">
+        <div className="flex flex-col justify-center ">
           <h1 className="bold monospace ">PROYECTOS();</h1>
+          <div className="w-30 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
        
         <div className="flex gap-6 flex-col w-full float-center ">
@@ -57,22 +58,22 @@ export default function Proyectos() {
                 borderRadius="2xl"
               />
               <div className="flex flex-col justify-between  w-[48%] h-[90%] p-8">
-                <h2 className="bold">{proyecto.titulo}</h2>
-                <span className="text-gray-300" style={{ fontSize: "0.9rem" }}>
+                <h2 className="bold nata-sans">{proyecto.titulo}</h2>
+                <span className="text-gray-300 nata-sans" style={{ fontSize: "0.9rem" }}>
                   {proyecto.descripción}
                 </span>
                 <div className="flex gap-2">
                   {proyecto.tec.map((t) => (
-                    <a
+                    <div
                       href=""
                       style={{ backgroundColor: "#4B4B4B" }}
-                      className="flex gap-2  items-center justify-center rounded-2xl h-7 w-24"
+                      className="flex gap-2  items-center justify-center rounded-2xl h-7 w-24 "
                     >
                       {t.icono}
                       <p className="" style={{ fontSize: "0.75rem" }}>
                         {t.nombre}
                       </p>
-                    </a>
+                    </div>
                   ))}
                 </div>
                 <div className="flex gap-4">
