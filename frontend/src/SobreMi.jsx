@@ -11,7 +11,7 @@ export default function SobreMi() {
 
   return (
     <div className="w-[65%] min-h-[100vh] flex justify-center items-center fira-code" id="inicio">
-      <div className="bg-fondo-oscuro-div w-full min-h-[50vh] flex flex-col gap-8 justify-center items-center rounded-2xl borde">
+      <div className="w-full min-h-[50vh] flex flex-col gap-8 justify-center items-center rounded-2xl borde bg-[#DBDBDB] text-black dark:bg-[#242424] dark:text-white">
         <div className="flex justify-center items-center gap-2 text-white ">
           <FaCode />
           <h1 className="fira-code">Sobre mi</h1>

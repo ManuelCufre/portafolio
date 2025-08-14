@@ -8,8 +8,8 @@ export default function Header() {
   const { modo, setModo, handleModo } = useMode();
 
   return (
-    <header className="w-full z-1000 h-14  fixed flex items-center justify-center  text-white">
-      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8 bg-fondo-oscuro-div rounded-xl borde">
+    <header className="w-full z-1000 h-14  fixed flex items-center justify-center ">
+      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl borde bg-[#DBDBDB] text-black dark:bg-[#242424] dark:text-white">
         <div className="flex justify-center items-center gap-2 relative left-4">
           <FaCode className="text-teal-400"/>
           <h2 className="text-l font-bold nata-sans" style={{ fontSize: "0.9rem" }}>Manuel Agustín Cufré</h2>
@@ -89,7 +89,7 @@ export default function Header() {
                 aria-label="Search database"
                 onClick={() => handleModo()}
               >
-                {modo === "oscuro" ? (
+                {modo === "dark" ? (
                   <MdOutlineDarkMode />
                 ) : (
                   <MdOutlineLightMode />

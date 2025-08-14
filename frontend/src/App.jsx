@@ -14,7 +14,7 @@ function App() {
     <div className="bg-fondo-oscuro color-text-oscuro">
    
     <Header />
-    <div className='w-full flex flex-col items-center bg-gray-600 bg-fondo-oscuro' >
+    <div className='w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-[#1E1E1F]' >
     <SobreMi/> 
     <Tecnologias />
     <Proyectos />

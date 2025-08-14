@@ -1,104 +1,47 @@
-import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-
 export default function Contacto() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({ message: '', isError: false });
-  
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    setSubmitStatus({ message: '', isError: false });
-
-    try {
-      const response = await fetch('http://localhost:3001/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) throw new Error('Error al enviar el mensaje');
-
-      setSubmitStatus({ 
-        message: '¡Mensaje enviado con éxito!', 
-        isError: false 
-      });
-      reset();
-    } catch (error) {
-      setSubmitStatus({ 
-        message: error.message || 'Ocurrió un error', 
-        isError: true 
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 text-white" id="contacto">
-      <div className="flex flex-col justify-center">
-        <h1 className="bold monospace">CONTACTO();</h1>
-        <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
-      </div>
-      
+       <div className="flex flex-col justify-center ">
+          <h1 className="bold monospace ">CONTACTO();</h1>
+          <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
+        </div>
       <div className="w-full min-h-[55vh] bg-fondo-oscuro-div flex flex-col justify-around rounded-2xl borde items-center p-8">
-        <div className="w-[70%]">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex flex-col gap-4">
+       
+        
+        <div className="w-[70%] ">
+          <form className="space-y-6 flex flex-col gap-4">
             {/* Campo Nombre */}
             <div>
               <label htmlFor="nombre" className="block text-sm font-medium mb-1 nata-sans text-gray-200" style={{fontWeight: '600'}}>
                 Nombre
               </label>
               <input
+                type="text"
                 id="nombre"
-                {...register('nombre', { 
-                  required: 'Este campo es obligatorio',
-                  maxLength: {
-                    value: 50,
-                    message: 'Máximo 50 caracteres'
-                  }
-                })}
+                name="nombre"
                 className="w-full h-12 borde bg-fondo-oscuro border border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
-                placeholder="Nombre completo"
+                placeholder="Tu nombre completo"
+                required
                 style={{padding: '0.8rem'}}
-                autoComplete="off"
+                autocomplete="off"
               />
-              {errors.nombre && (
-                <p className="mt-1 text-sm text-red-400">{errors.nombre.message}</p>
-              )}
             </div>
 
             {/* Campo Email */}
             <div>
-              <label htmlFor="email" className="block text-sm mb-1 nata-sans text-gray-200" style={{fontWeight: '600'}}>
+              <label htmlFor="email" className="block text-sm mb-1 nata-sans text-gray-200" style={{fontWeight: '600'}} >
                 Email
               </label>
               <input
-                id="email"
                 type="email"
-                {...register('email', { 
-                  required: 'Este campo es obligatorio',
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Email inválido'
-                  }
-                })}
-                className="w-full borde h-12 bg-fondo-oscuro border border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
+                id="email"
+                name="email"
+                className="w-full borde h-12  bg-fondo-oscuro border border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
                 placeholder="Email"
+                required
                 style={{padding: '0.8rem'}}
-                autoComplete="off"
+                autocomplete="off"
               />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
-              )}
             </div>
 
             {/* Campo Mensaje */}
@@ -108,48 +51,23 @@ export default function Contacto() {
               </label>
               <textarea
                 id="mensaje"
-                {...register('mensaje', { 
-                  required: 'Este campo es obligatorio',
-                  minLength: {
-                    value: 10,
-                    message: 'Mínimo 10 caracteres'
-                  },
-                  maxLength: {
-                    value: 500,
-                    message: 'Máximo 500 caracteres'
-                  }
-                })}
+                name="mensaje"
                 rows="4"
                 className="w-full h-40 borde bg-fondo-oscuro border border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
                 placeholder="Escribe tu mensaje aquí..."
+                required
                 style={{padding: '0.8rem', resize: 'none'}}
-                autoComplete="off"
-              ></textarea>
-              {errors.mensaje && (
-                <p className="mt-1 text-sm text-red-400">{errors.mensaje.message}</p>
-              )}
-            </div>
+                autocomplete="off"
 
-            {/* Mensaje de estado del envío */}
-            {submitStatus.message && (
-              <div className={`p-3 rounded-md ${
-                submitStatus.isError 
-                  ? 'bg-red-500/20 text-red-300' 
-                  : 'bg-teal-500/20 text-teal-300'
-              }`}>
-                {submitStatus.message}
-              </div>
-            )}
+              ></textarea>
+            </div>
 
             {/* Botón de Envío */}
             <button
               type="submit"
-              disabled={isSubmitting}
-              className={`w-full cursor-pointer !bg-teal-700 hover:bg-teal-600 text-white font-medium h-10 rounded-md shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 ${
-                isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-              }`}
+              className="w-full cursor-pointer !bg-teal-700 hover:bg-teal-600 text-white font-medium h-10 rounded-md shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 "
             >
-              {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+              Enviar Mensaje
             </button>
           </form>
         </div>
