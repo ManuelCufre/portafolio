@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './Header'
-import SobreMi from './SobreMi'
-import Tecnologias from './Tecnologias'
+import Inicio from './Inicio'
+import Curriculum from './Curriculum'
 import Proyectos from './Proyectos'
 import Contacto from './Contacto'
 import useMode from './hooks/useMode'
@@ -15,8 +15,8 @@ function App() {
    
     <Header />
     <div className='w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-[#1E1E1F]' >
-    <SobreMi/> 
-    <Tecnologias />
+    <Inicio /> 
+    <Curriculum />
     <Proyectos />
     <Contacto />
     </div>

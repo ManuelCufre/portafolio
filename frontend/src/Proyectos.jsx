@@ -51,7 +51,7 @@ export default function Proyectos() {
         <div className="flex gap-6 flex-col w-full float-center ">
           {proyectos.map((proyecto) => (
             <div
-              className="flex items-center justify-around h-[35vh] borde rounded-2xl bg-[#DBDBDB] dark:bg-[#242424] "
+              className="flex items-center justify-around h-[35vh] borde rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
               key={proyecto.id}
             >
               <Image
@@ -61,11 +61,11 @@ export default function Proyectos() {
                 borderRadius="2xl"
               />
               <div className="flex flex-col justify-between  w-[48%] h-[90%] p-8 ">
-                <h2 className="bold nata-sans text-black black:text-white">
+                <h2 className="bold nata-sans  black:text-white">
                   {proyecto.titulo}
                 </h2>
                 <span
-                  className="nata-sans text-gray-800  black:text-white "
+                  className="nata-sans  "
                   style={{ fontSize: "0.9rem" }}
                 >
                   {proyecto.descripción}
@@ -74,7 +74,7 @@ export default function Proyectos() {
                   {proyecto.tec.map((t) => (
                     <div
                       href=""
-                      className="flex gap-2  items-center justify-center rounded-2xl h-7 w-24 bg-[#4b4b4b]  black:bg-[#4b4b4b]"
+                      className="flex gap-2 text-white items-center justify-center rounded-2xl h-7 w-24 bg-[#4b4b4b]  black:bg-[#4b4b4b]"
                     >
                       {t.icono}
                       <p className="" style={{ fontSize: "0.75rem" }}>
@@ -87,11 +87,11 @@ export default function Proyectos() {
                   <button
                     className="
                     !bg-slate-700 hover:!bg-slate-600 
-                    text-white 
                     font-medium 
                     h-9 w-30 cursor-pointer
                     rounded-sm 
-                    shadow-md hover:shadow-lg 
+                    shadow-md 
+                    hover:shadow-lg 
                     transition-all duration-300 
                     transform hover:-translate-y-0.5 
                     active:translate-y-0 active:scale-95
@@ -99,12 +99,12 @@ export default function Proyectos() {
                     group
                   "
                   >
-                    <FiGithub className="text-lg group-hover:text-white/90 transition-colors" />
-                    <span>GitHub</span>
+                    <FiGithub className="text-lg text-white group-hover:text-white/90 transition-colors" />
+                    <span className="text-white">GitHub</span>
                   </button>
                   <button
                     className="
-                    !bg-teal-800 hover:!bg-teal-700 
+                    !bg-teal-500 hover:!bg-teal-400 
                     text-white 
                     font-medium 
                     h-9 w-30 cursor-pointer
@@ -117,8 +117,8 @@ export default function Proyectos() {
                     group
                   "
                   >
-                    <FiExternalLink className="text-lg group-hover:text-white/90 transition-colors" />
-                    <span>Ver app</span>
+                    <FiExternalLink className="text-lg text-black  transition-colors" />
+                    <span className="text-black">Ver app</span>
                   </button>
                 </div>
               </div>

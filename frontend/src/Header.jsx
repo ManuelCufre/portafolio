@@ -9,10 +9,15 @@ export default function Header() {
 
   return (
     <header className="w-full z-1000 h-14  fixed flex items-center justify-center ">
-      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl borde bg-[#DBDBDB] text-black dark:bg-[#242424] dark:text-white">
+      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl text-black bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 !border-1 !border-gray-300 dark:bg-[#242424] dark:text-white  dark:!border-gray-600">
         <div className="flex justify-center items-center gap-2 relative left-4">
-          <FaCode className="text-teal-400"/>
-          <h2 className="text-l font-bold nata-sans" style={{ fontSize: "0.9rem" }}>Manuel Agustín Cufré</h2>
+          <FaCode className="text-teal-400" />
+          <h2
+            className="text-l font-bold nata-sans"
+            style={{ fontSize: "0.9rem" }}
+          >
+            Manuel Agustín Cufré
+          </h2>
         </div>
         <nav>
           <ul
@@ -85,28 +90,28 @@ export default function Header() {
 
             {/* Botón de modo oscuro/claro (sin subrayado) */}
             <li>
-              <IconButton
-                aria-label="Search database"
-                onClick={() => handleModo()}
-              >
-                {modo === "dark" ? (
-                  <MdOutlineDarkMode />
-                ) : (
-                  <MdOutlineLightMode />
-                )}
-              </IconButton>
+              {modo === "dark" ? (
+                <IconButton
+                  aria-label="Search database"
+                  bgColor={"gray.850"}
+                  onClick={() => handleModo()}
+                >
+                  <MdOutlineDarkMode color="white" />
+                </IconButton>
+              ) : (
+                <IconButton
+                  aria-label="Search database"
+                  variant={"subtle"}
+                  bgColor={"gray.200"}
+                  onClick={() => handleModo()}
+                >
+                  <MdOutlineLightMode color="black" />
+                </IconButton>
+              )}
             </li>
           </ul>
         </nav>
       </div>
     </header>
   );
-  function ToggleDarkMode() {
-    const { colorMode, toggleColorMode } = useColorMode();
-    return (
-      <Button onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
-    );
-  }
 }
