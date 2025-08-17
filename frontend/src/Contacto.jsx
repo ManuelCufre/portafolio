@@ -49,7 +49,7 @@ export default function Contacto() {
         <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
       </div>
       
-      <div className="w-full min-h-[55vh] flex flex-col justify-around rounded-2xl borde items-center p-8 !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
+      <div className="w-full min-h-[65vh] flex flex-col justify-around rounded-2xl borde items-center p-8 !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
         <div className="w-[70%]">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex flex-col gap-4">
             {/* Campo Nombre */}
@@ -66,7 +66,7 @@ export default function Contacto() {
                     message: 'Máximo 50 caracteres'
                   }
                 })}
-                className="w-full h-12 borde bg-[#F2F2F2] !border-1 !border-gray-200 dark:bg-[#1E1E1F] rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
+                className="w-full h-12 borde bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Nombre completo"
                 style={{padding: '0.8rem'}}
                 autoComplete="off"
@@ -91,13 +91,42 @@ export default function Contacto() {
                     message: 'Email inválido'
                   }
                 })}
-                className="w-full borde h-12 bg-[#F2F2F2] dark:bg-[#1E1E1F]  border border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
+                className="w-full h-12 borde bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Email"
                 style={{padding: '0.8rem'}}
                 autoComplete="off"
               />
               {errors.email && (
                 <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
+              )}
+            </div>
+
+             {/* Campo Asunto */}
+            <div>
+              <label htmlFor="email" className="block text-sm mb-1 nata-sans black:text-gray-200" style={{fontWeight: '600'}}>
+                Asunto
+              </label>
+              <input
+                id="asunto"
+                
+                {...register('asunto', { 
+                  required: 'Este campo es obligatorio',
+                  minLength: {
+                    value: 2,
+                    message: 'Mínimo 10 caracteres'
+                  },
+                  maxLength: {
+                    value: 500,
+                    message: 'Máximo 500 caracteres'
+                  }
+                })}
+                className="w-full h-12 borde bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                placeholder="Asunto"
+                style={{padding: '0.8rem'}}
+                autoComplete="off"
+              />
+              {errors.asunto && (
+                <p className="mt-1 text-sm text-red-400">{errors.asunto.message}</p>
               )}
             </div>
 
@@ -120,7 +149,7 @@ export default function Contacto() {
                   }
                 })}
                 rows="4"
-                className="w-full h-40 borde bg-[#F2F2F2] dark:bg-[#1E1E1F] border black:border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-700 focus:border-transparent transition-all"
+                className="w-full h-40 bg-[#FAFAFA] dark:bg-[#1E1E1F] !border-1 rounded-2xl dark:!border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Escribe tu mensaje aquí..."
                 style={{padding: '0.8rem', resize: 'none'}}
                 autoComplete="off"

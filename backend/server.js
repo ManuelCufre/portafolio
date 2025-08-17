@@ -17,13 +17,13 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', async (req, res) => {
-  const { nombre, email, mensaje } = req.body;
+  const { nombre, email, asunto, mensaje } = req.body;
 
   try {
     await transporter.sendMail({
       from: `"${nombre}" <${email}>`,
       to: process.env.EMAIL_USER, 
-      subject: `Nuevo mensaje de ${nombre}`,
+      subject: `${asunto}`,
       html: `
         <h3>Nuevo mensaje de contacto</h3>
         <p><strong>Nombre:</strong> ${nombre}</p>

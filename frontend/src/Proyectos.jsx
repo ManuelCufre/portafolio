@@ -40,18 +40,18 @@ export default function Proyectos() {
   return (
     <>
       <div
-        className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 dark:text-white "
+        className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 "
         id="proyectos"
       >
         <div className="flex flex-col justify-center ">
-          <h1 className="bold monospace ">PROYECTOS();</h1>
+          <h1 className="bold monospace dark:text-white">PROYECTOS();</h1>
           <div className="w-30 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
 
         <div className="flex gap-6 flex-col w-full float-center ">
           {proyectos.map((proyecto) => (
             <div
-              className="flex items-center justify-around h-[35vh] borde rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
+              className="flex items-center justify-around h-[35vh] rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2]  dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
               key={proyecto.id}
             >
               <Image
@@ -60,12 +60,12 @@ export default function Proyectos() {
                 alt=""
                 borderRadius="2xl"
               />
-              <div className="flex flex-col justify-between  w-[48%] h-[90%] p-8 ">
-                <h2 className="bold nata-sans  black:text-white">
+              <div className="flex flex-col justify-between w-[48%] h-[90%] p-8 ">
+                <h2 className="bold nata-sans dark:text-white">
                   {proyecto.titulo}
                 </h2>
                 <span
-                  className="nata-sans  "
+                  className="nata-sans text-gray-700 dark:text-gray-200"
                   style={{ fontSize: "0.9rem" }}
                 >
                   {proyecto.descripción}

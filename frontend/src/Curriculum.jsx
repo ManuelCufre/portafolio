@@ -53,11 +53,11 @@ export default function Curriculum() {
             <div className="w-full h-[20vh] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[82%] flex flex-col gap-6">
                 <div className="flex items-center gap-4">
-                  <PiUserCircleLight size={26} className="text-teal-400" />
-                  <h3 className="bold nata-sans ">Sobre mí</h3>
+                  <PiUserCircleLight size={26} className="text-teal-500" />
+                  <h3 className="bold nata-sans text-gray-800 dark:text-white">Sobre mí</h3>
                 </div>
                 <p
-                  className="dark:text-gray-300 nata-sans "
+                  className="text-gray-700 dark:text-gray-300 nata-sans "
                   style={{ fontSize: "0.95rem" }}
                 >
                   Soy un estudiante comprometido con mi aprendizaje y
@@ -71,7 +71,7 @@ export default function Curriculum() {
             <div className="w-full h-[40vh] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white ">
               <div className="w-[90%] h-[90%] flex flex-col gap-8 ">
                 <div className="flex items-center gap-4">
-                  <IoBagOutline size={26} className="text-teal-400" />
+                  <IoBagOutline size={26} className="text-teal-500" />
                   <h3 className="bold nata-sans text-gray-900 dark:text-white">
                     Experiencia laboral
                   </h3>
@@ -90,7 +90,7 @@ export default function Curriculum() {
                     Pasantía en Prodeman. Octubre 2023 - Abril 2025
                   </p>
                   <ul
-                    className="text-gray-900 dark:text-gray-300 nata-sans"
+                    className="text-gray-700 dark:text-gray-300 nata-sans"
                     style={{ fontSize: "0.9rem" }}
                   >
                     <li>
@@ -122,8 +122,8 @@ export default function Curriculum() {
             <div className="w-full h-[40vh] flex justify-center items-center rounded-2xl hover:shadow-sm dark:hover:shadow-gray-700 text-black !border-1 !border-gray-300 bg-[#F2F2F2] dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[90%] flex flex-col gap-8 ">
                 <div className="flex items-center gap-4">
-                  <PiBracketsCurly size={26} className="text-teal-400" />
-                  <h3 className="bold nata-sans">Stack</h3>
+                  <PiBracketsCurly size={26} className="text-teal-500" />
+                  <h3 className="bold nata-sans text-gray-900 dark:text-white">Stack</h3>
                 </div>
                 <div className="grid grid-cols-6 gap-4 mt-4">
                   {tecnologias.map((tecnologia, index) => (
@@ -142,8 +142,8 @@ export default function Curriculum() {
             <div className="w-full h-[20vh] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[82%] flex flex-col gap-6 ">
                 <div className="flex items-center gap-4">
-                  <PiGraduationCap size={22} className="text-teal-400" />
-                  <h3 className="bold nata-sans">Formación</h3>
+                  <PiGraduationCap size={22} className="text-teal-500" />
+                  <h3 className="bold nata-sans text-gray-900 dark:text-white">Formación</h3>
                 </div>
                 <div className="flex flex-col gap-2">
                   <p
@@ -153,13 +153,13 @@ export default function Curriculum() {
                     TECNICATURA SUPERIOR EN ANALISTA DE SISTEMAS
                   </p>
                   <p
-                    className="text-black dark:text-gray-200 nata-sans"
+                    className="text-gray-700 dark:text-gray-200 nata-sans"
                     style={{ fontSize: "0.9rem" }}
                   >
                     Instituto Superior 25 de mayo.
                   </p>
                   <p
-                    className="text-black dark:text-gray-200 nata-sans"
+                    className="text-gray-700 dark:text-gray-200 nata-sans"
                     style={{ fontSize: "0.9rem" }}
                   >
                     2022 - Presente.
