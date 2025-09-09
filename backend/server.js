@@ -5,7 +5,19 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
 
-app.use(cors());
+// Configuración CORS explícita (usa ALLOWED_ORIGIN si está definida)
+const corsOptions = {
+  origin: process.env.ALLOWED_ORIGIN
+    ? process.env.ALLOWED_ORIGIN.split(',').map((s) => s.trim())
+    : true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false,
+};
+
+app.use(cors(corsOptions));
+// Responder preflight para cualquier ruta
+app.options('*', cors(corsOptions));
 app.use(express.json());
 
 const transporter = nodemailer.createTransport({
