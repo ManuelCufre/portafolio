@@ -40,7 +40,13 @@ app.get('/test-email', (req, res) => {
     emailUser: process.env.EMAIL_USER ? 'configured' : 'not configured',
     emailPass: process.env.EMAIL_PASS ? 'configured' : 'not configured',
     nodeEnv: process.env.NODE_ENV || 'development',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    debug: {
+      hasEmailUser: !!process.env.EMAIL_USER,
+      hasEmailPass: !!process.env.EMAIL_PASS,
+      emailUserLength: process.env.EMAIL_USER ? process.env.EMAIL_USER.length : 0,
+      emailPassLength: process.env.EMAIL_PASS ? process.env.EMAIL_PASS.length : 0
+    }
   });
 });
 
