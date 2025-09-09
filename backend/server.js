@@ -32,11 +32,7 @@ app.get('/test', (req, res) => {
 
 // Ruta de prueba para email (sin enviar realmente)
 app.get('/test-email', (req, res) => {
-  // Intentar inicializar si no está disponible
-  if (!transporter) {
-    console.log('Transporter no disponible en test, intentando inicializar...');
-    initializeTransporter();
-  }
+  const transporter = createTransporter();
   
   res.status(200).json({ 
     message: 'Email test endpoint',
@@ -48,39 +44,25 @@ app.get('/test-email', (req, res) => {
   });
 });
 
-// Inicializar nodemailer solo si las variables están disponibles
-let transporter = null;
-
-// Función para inicializar transporter
-function initializeTransporter() {
+// Función para crear transporter (se ejecuta en cada request)
+function createTransporter() {
   try {
-    console.log('Intentando inicializar transporter...');
-    console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
-    console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
-    
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const nodemailer = require('nodemailer');
-      transporter = nodemailer.createTransporter({
+      return nodemailer.createTransporter({
         service: 'Gmail',
         auth: {
           user: process.env.EMAIL_USER,  
           pass: process.env.EMAIL_PASS,  
         },
       });
-      console.log('Nodemailer inicializado correctamente');
-      return true;
-    } else {
-      console.log('Variables de email no configuradas');
-      return false;
     }
+    return null;
   } catch (error) {
-    console.error('Error inicializando nodemailer:', error);
-    return false;
+    console.error('Error creando transporter:', error);
+    return null;
   }
 }
-
-// Inicializar al cargar el módulo
-initializeTransporter();
 
 app.post('/send-email', async (req, res) => {
   console.log('POST /send-email recibido');
@@ -88,15 +70,12 @@ app.post('/send-email', async (req, res) => {
   console.log('Body:', req.body);
   
   try {
-    // Intentar inicializar transporter si no está disponible
+    // Crear transporter en cada request
+    const transporter = createTransporter();
     if (!transporter) {
-      console.log('Transporter no disponible, intentando inicializar...');
-      const initialized = initializeTransporter();
-      if (!initialized) {
-        return res.status(500).json({ 
-          error: 'Servicio de email no configurado. Verifica las variables de entorno EMAIL_USER y EMAIL_PASS.' 
-        });
-      }
+      return res.status(500).json({ 
+        error: 'Servicio de email no configurado. Verifica las variables de entorno EMAIL_USER y EMAIL_PASS.' 
+      });
     }
 
     const { nombre, email, asunto, mensaje } = req.body;
