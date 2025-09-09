@@ -36,29 +36,40 @@ app.get('/test-email', (req, res) => {
     message: 'Email test endpoint',
     transporterAvailable: !!transporter,
     emailUser: process.env.EMAIL_USER ? 'configured' : 'not configured',
-    emailPass: process.env.EMAIL_PASS ? 'configured' : 'not configured'
+    emailPass: process.env.EMAIL_PASS ? 'configured' : 'not configured',
+    nodeEnv: process.env.NODE_ENV || 'development'
   });
 });
 
 // Inicializar nodemailer solo si las variables están disponibles
 let transporter = null;
-try {
-  if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-    const nodemailer = require('nodemailer');
-    transporter = nodemailer.createTransporter({
-      service: 'Gmail',
-      auth: {
-        user: process.env.EMAIL_USER,  
-        pass: process.env.EMAIL_PASS,  
-      },
-    });
-    console.log('Nodemailer inicializado correctamente');
-  } else {
-    console.log('Variables de email no configuradas');
+
+// Función para inicializar transporter
+function initializeTransporter() {
+  try {
+    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      const nodemailer = require('nodemailer');
+      transporter = nodemailer.createTransporter({
+        service: 'Gmail',
+        auth: {
+          user: process.env.EMAIL_USER,  
+          pass: process.env.EMAIL_PASS,  
+        },
+      });
+      console.log('Nodemailer inicializado correctamente');
+      return true;
+    } else {
+      console.log('Variables de email no configuradas');
+      return false;
+    }
+  } catch (error) {
+    console.error('Error inicializando nodemailer:', error);
+    return false;
   }
-} catch (error) {
-  console.error('Error inicializando nodemailer:', error);
 }
+
+// Inicializar al cargar el módulo
+initializeTransporter();
 
 app.post('/send-email', async (req, res) => {
   console.log('POST /send-email recibido');
@@ -66,12 +77,15 @@ app.post('/send-email', async (req, res) => {
   console.log('Body:', req.body);
   
   try {
-    // Verificar si nodemailer está disponible
+    // Intentar inicializar transporter si no está disponible
     if (!transporter) {
-      console.log('Transporter no disponible');
-      return res.status(500).json({ 
-        error: 'Servicio de email no configurado. Verifica las variables de entorno.' 
-      });
+      console.log('Transporter no disponible, intentando inicializar...');
+      const initialized = initializeTransporter();
+      if (!initialized) {
+        return res.status(500).json({ 
+          error: 'Servicio de email no configurado. Verifica las variables de entorno EMAIL_USER y EMAIL_PASS.' 
+        });
+      }
     }
 
     const { nombre, email, asunto, mensaje } = req.body;
