@@ -30,6 +30,16 @@ app.get('/test', (req, res) => {
   res.status(200).json({ message: 'Test route working' });
 });
 
+// Ruta de prueba para email (sin enviar realmente)
+app.get('/test-email', (req, res) => {
+  res.status(200).json({ 
+    message: 'Email test endpoint',
+    transporterAvailable: !!transporter,
+    emailUser: process.env.EMAIL_USER ? 'configured' : 'not configured',
+    emailPass: process.env.EMAIL_PASS ? 'configured' : 'not configured'
+  });
+});
+
 // Inicializar nodemailer solo si las variables están disponibles
 let transporter = null;
 try {
@@ -51,24 +61,34 @@ try {
 }
 
 app.post('/send-email', async (req, res) => {
-  // Verificar si nodemailer está disponible
-  if (!transporter) {
-    return res.status(500).json({ 
-      error: 'Servicio de email no configurado. Verifica las variables de entorno.' 
-    });
-  }
-
-  const { nombre, email, asunto, mensaje } = req.body;
-
-  // Validación básica
-  if (!nombre || !email || !asunto || !mensaje) {
-    return res.status(400).json({ 
-      error: 'Todos los campos son obligatorios' 
-    });
-  }
-
+  console.log('POST /send-email recibido');
+  console.log('Headers:', req.headers);
+  console.log('Body:', req.body);
+  
   try {
-    await transporter.sendMail({
+    // Verificar si nodemailer está disponible
+    if (!transporter) {
+      console.log('Transporter no disponible');
+      return res.status(500).json({ 
+        error: 'Servicio de email no configurado. Verifica las variables de entorno.' 
+      });
+    }
+
+    const { nombre, email, asunto, mensaje } = req.body;
+    console.log('Datos recibidos:', { nombre, email, asunto, mensaje });
+
+    // Validación básica
+    if (!nombre || !email || !asunto || !mensaje) {
+      console.log('Validación fallida - campos faltantes');
+      return res.status(400).json({ 
+        error: 'Todos los campos son obligatorios',
+        received: { nombre: !!nombre, email: !!email, asunto: !!asunto, mensaje: !!mensaje }
+      });
+    }
+
+    console.log('Intentando enviar email...');
+    
+    const mailOptions = {
       from: `"${nombre}" <${email}>`,
       to: process.env.EMAIL_USER, 
       subject: `${asunto}`,
@@ -78,14 +98,21 @@ app.post('/send-email', async (req, res) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Mensaje:</strong> ${mensaje}</p>
       `,
-    });
+    };
+
+    console.log('Mail options:', { ...mailOptions, to: '[HIDDEN]' });
+    
+    const result = await transporter.sendMail(mailOptions);
+    console.log('Email enviado exitosamente:', result.messageId);
 
     res.status(200).json({ message: 'Mensaje enviado con éxito ✅' });
   } catch (error) {
-    console.error('Error enviando email:', error);
+    console.error('Error completo en /send-email:', error);
+    console.error('Error stack:', error.stack);
     res.status(500).json({ 
       error: 'Error al enviar el mensaje',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      details: error.message,
+      type: error.name
     });
   }
 });
