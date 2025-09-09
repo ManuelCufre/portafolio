@@ -49,6 +49,8 @@ export default function Inicio() {
             <div className="w-[%100] h-40 flex items-center justify-center ">
               <div className="flex gap-2 w-[34%] text-center justify-center items-center rounded-md !py-4 ">
                 <a
+                  href="https://github.com/ManuelCufre"
+                  target="_blank"
                   className="w-10 h-10 !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
                     transition-all duration-300 
                     transform hover:-translate-y-0.5 
