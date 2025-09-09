@@ -53,19 +53,30 @@ app.get('/test-email', (req, res) => {
 // Función para crear transporter (se ejecuta en cada request)
 function createTransporter() {
   try {
+    console.log('Creando transporter...');
+    console.log('EMAIL_USER existe:', !!process.env.EMAIL_USER);
+    console.log('EMAIL_PASS existe:', !!process.env.EMAIL_PASS);
+    
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const nodemailer = require('nodemailer');
-      return nodemailer.createTransporter({
+      console.log('Nodemailer requerido exitosamente');
+      
+      const transporter = nodemailer.createTransporter({
         service: 'Gmail',
         auth: {
           user: process.env.EMAIL_USER,  
           pass: process.env.EMAIL_PASS,  
         },
       });
+      
+      console.log('Transporter creado exitosamente');
+      return transporter;
     }
+    console.log('Variables de entorno faltantes');
     return null;
   } catch (error) {
     console.error('Error creando transporter:', error);
+    console.error('Error stack:', error.stack);
     return null;
   }
 }
