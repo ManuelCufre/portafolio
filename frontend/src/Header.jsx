@@ -90,24 +90,21 @@ export default function Header() {
 
             {/* Botón de modo oscuro/claro (sin subrayado) */}
             <li>
-              {modo === "dark" ? (
-                <IconButton
-                  aria-label="Search database"
-                  bgColor={"gray.850"}
-                  onClick={() => handleModo()}
-                >
-                  <MdOutlineDarkMode color="white" />
-                </IconButton>
-              ) : (
-                <IconButton
-                  aria-label="Search database"
-                  variant={"subtle"}
-                  bgColor={"gray.200"}
-                  onClick={() => handleModo()}
-                >
-                  <MdOutlineLightMode color="black" />
-                </IconButton>
-              )}
+              <IconButton
+                aria-label="Toggle color mode"
+                variant="ghost"
+                size="sm"
+                onClick={() => handleModo()}
+                _hover={{ bg: "transparent" }}
+                _active={{ bg: "transparent" }}
+                className="hover:text-teal-400 transition-colors"
+              >
+                {modo === "dark" ? (
+                  <MdOutlineDarkMode size={20} />
+                ) : (
+                  <MdOutlineLightMode size={20} />
+                )}
+              </IconButton>
             </li>
           </ul>
         </nav>

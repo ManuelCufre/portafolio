@@ -2,13 +2,12 @@ import { FaGithub } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { IoMdDownload } from "react-icons/io";
 import { FiGithub } from "react-icons/fi";
-import Imagen from "./img/carbon.png";
 import { FaCode } from "react-icons/fa6";
 import { Button } from "@chakra-ui/react";
 import { PiBracketsCurly } from "react-icons/pi";
 import useMode from "./hooks/useMode";
 import { FaLinkedinIn } from "react-icons/fa";
-import Cv from "./Manuel Agustín Cufré CV.pdf"
+import Cv from "./Manuel Agustín Cufré CV.pdf";
 export default function Inicio() {
   const { modo } = useMode();
 
@@ -34,14 +33,13 @@ export default function Inicio() {
                 className="text-lg text-gray-700 dark:text-gray-300"
                 style={{ fontSize: "1.2rem" }}
               >
-                Soy un desarrollador web apasionado por la tecnología y el
-                aprendizaje continuo. Me encanta crear aplicaciones web que sean
-                funcionales y atractivas. Siempre estoy buscando nuevos desafíos
-                y oportunidades para mejorar mis habilidades. Soy un
-                desarrollador web apasionado por la tecnología y el aprendizaje
-                continuo. Me encanta crear aplicaciones web que sean funcionales
-                y atractivas. Siempre estoy buscando nuevos desafíos y
-                oportunidades para mejorar mis habilidades.
+                Soy una analista de sistemas especializado en el desarrollo web
+                Full-Stack, que disfruta transformar ideas en aplicaciones web
+                modernas, dinámicas y fáciles de usar. Mi objetivo en crear
+                aplicaciones que combinan funcionalidad, rendimiento y
+                diseño atractivo, priorizando siempre la experiencia del
+                usuario. Mi enfoque está en desarrollar soluciones escalables y
+                eficientes que aporten valor real a cada proyecto.
               </p>
             </div>
 

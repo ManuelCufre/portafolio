@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+import { useColorMode } from "../components/ui/color-mode";
+import { useEffect } from "react";
 
 export default function useMode() {
-    // Por defecto será 'oscuro' y solo cambiará explícitamente a 'claro'
-    const [modo, setModo] = useState('dark');
-
-    const handleModo = () => {
-        setModo(prevModo => prevModo === 'dark' ? 'light' : 'dark');
-    }
+    const { colorMode, toggleColorMode, setColorMode } = useColorMode();
 
     useEffect(() => {
-    if (modo === 'dark') {
-        document.body.classList.add('dark');
-    } else {
-        document.body.classList.remove('dark');
-    }
-    console.log(modo)
-}, [modo]);
+        if (!colorMode || colorMode === 'system') {
+            setColorMode('dark');
+        }
+    }, [colorMode, setColorMode]);
 
-    return { modo, setModo, handleModo }
+    const handleModo = () => {
+        toggleColorMode();
+    }
+
+    return { 
+        modo: colorMode || 'dark', 
+        setModo: toggleColorMode, 
+        handleModo 
+    }
 }
