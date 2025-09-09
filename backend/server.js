@@ -32,12 +32,19 @@ app.get('/test', (req, res) => {
 
 // Ruta de prueba para email (sin enviar realmente)
 app.get('/test-email', (req, res) => {
+  // Intentar inicializar si no está disponible
+  if (!transporter) {
+    console.log('Transporter no disponible en test, intentando inicializar...');
+    initializeTransporter();
+  }
+  
   res.status(200).json({ 
     message: 'Email test endpoint',
     transporterAvailable: !!transporter,
     emailUser: process.env.EMAIL_USER ? 'configured' : 'not configured',
     emailPass: process.env.EMAIL_PASS ? 'configured' : 'not configured',
-    nodeEnv: process.env.NODE_ENV || 'development'
+    nodeEnv: process.env.NODE_ENV || 'development',
+    timestamp: new Date().toISOString()
   });
 });
 
@@ -47,6 +54,10 @@ let transporter = null;
 // Función para inicializar transporter
 function initializeTransporter() {
   try {
+    console.log('Intentando inicializar transporter...');
+    console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
+    
     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
       const nodemailer = require('nodemailer');
       transporter = nodemailer.createTransporter({
