@@ -51,7 +51,10 @@ app.post('/send-email', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+// Ruta simple de salud/diagnóstico
+app.get('/', (req, res) => {
+  res.status(200).json({ ok: true, message: 'Backend operativo' });
 });
+
+// En Vercel Serverless se exporta la app en lugar de escuchar un puerto
+module.exports = app;
