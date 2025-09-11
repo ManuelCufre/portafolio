@@ -188,11 +188,11 @@ export default function Proyectos() {
                 cursor="pointer"
               />
               <div className="flex flex-col justify-between w-[48%] h-[90%] p-8 ">
-                <h2 className="!font-semibold nata-sans dark:text-white  lg:!text-[1rem] 2xl:!text-[1.5rem]">
+                <h2 className="!font-semibold nata-sans dark:text-white  lg:!text-[1rem] xl:!text-[1.25rem] 2xl:!text-[1.5rem]">
                   {proyecto.titulo}
                 </h2>
                 <span
-                  className="nata-sans text-gray-700 dark:text-gray-200 lg:!text-[0.6rem] 2xl:!text-[0.9rem]"
+                  className="nata-sans text-gray-700 dark:text-gray-200 lg:!text-[0.6rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem]"
                 >
                   {proyecto.descripción}
                 </span>
