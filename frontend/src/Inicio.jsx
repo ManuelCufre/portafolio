@@ -21,17 +21,15 @@ export default function Inicio() {
           <div className="w-[100%]">
             <div className="flex flex-col ">
               <h2
-                className="bold text-gray-700 dark:text-white"
-                style={{ fontSize: "3rem" }}
+                className="!font-bold md:!text-[1.7rem] 2xl:!text-[3rem] text-gray-700 dark:text-white text-2xl "
               >
                 Hola soy Manuel Cufré
               </h2>
-              <h2 className="bold text-teal-500" style={{ fontSize: "2rem" }}>
+              <h2 className=" text-teal-500 !font-bold md:!text-[1.4rem] 2xl:!text-[2rem]" >
                 Analista de sistemas
               </h2>
               <p
-                className="text-lg text-gray-700 dark:text-gray-300"
-                style={{ fontSize: "1.2rem" }}
+                className="text-gray-700 dark:text-gray-300 text-sm md:!text-[0.9rem] 2xl:!text-[1.2rem]"
               >
                 Soy una analista de sistemas especializado en el desarrollo web
                 Full-Stack, que disfruta transformar ideas en aplicaciones web
@@ -45,40 +43,38 @@ export default function Inicio() {
 
             {/* github */}
             <div className="w-[%100] h-40 flex items-center justify-center ">
-              <div className="flex gap-2 w-[34%] text-center justify-center items-center rounded-md !py-4 ">
+              <div className="flex gap-2 w-[34%] text-center justify-center items-center rounded-md  ">
                 <a
                   href="https://github.com/ManuelCufre"
                   target="_blank"
-                  className="w-10 h-10 !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
+                  className="!p-2  !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
                     transition-all duration-300 
                     transform hover:-translate-y-0.5 
                     active:translate-y-0 active:scale-95"
                 >
                   <FiGithub
-                    size={20}
-                    className="text-teal-600 hover:text-teal-500"
+                    className="md:!text-[1rem] 2xl:!text-[1.3rem] text-teal-600 hover:text-teal-500"
                   />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/manuel-agustin-cufre/"
                   target="_blank"
-                  className="w-10 h-10 !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
+                  className="!p-2 !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
                     transition-all duration-300 
                     transform hover:-translate-y-0.5 
                     active:translate-y-0 active:scale-95"
                 >
                   <FaLinkedinIn
-                    size={20}
-                    className="text-teal-600 hover:text-teal-500 "
+                    
+                    className="md:!text-[1rem] 2xl:!text-[1.3rem] text-teal-600 hover:text-teal-500"
                   />
                 </a>
                 <a href={Cv} download={Cv}>
                   <button
-                    className="!bg-teal-500 hover:!bg-teal-500 
+                    className="!bg-teal-500 hover:!bg-teal-500 cursor-pointer
                     text-black 
                     dark:text-white
-                    font-medium 
-                    h-9 w-40 cursor-pointer
+                    !py-1.5 !px-3
                     rounded-sm 
                     shadow-md hover:shadow-lg 
                     transition-all duration-300 
@@ -87,15 +83,15 @@ export default function Inicio() {
                     flex items-center justify-center gap-2
                     group"
                   >
-                    <IoMdDownload size={24} />
-                    Descargar CV
+                    <IoMdDownload className="md:!text-[1.2rem] 2xl:!text-[1.2rem]" />
+                    <span className="md:!text-[0.7rem] 2xl:!text-[1rem]">DescargarCV</span>
                   </button>
                 </a>
                 <a href="mailto:manuelcufree@gmail.com?subject=Contacto desde tu portafolio">
                   <button
                     className="!bg-teal-500 hover:!bg-teal-500 
                     font-medium 
-                    h-9 w-30 cursor-pointer
+                    !py-1.5 !px-3 cursor-pointer
                     rounded-sm 
                     shadow-md 
                     hover:shadow-lg 
@@ -105,8 +101,8 @@ export default function Inicio() {
                     flex items-center justify-center gap-2
                     group"
                   >
-                    <IoIosMail size={20} />
-                    Email
+                    <IoIosMail className="md:!text-[1.1rem] 2xl:!text-[1.2rem]"/>
+                    <span className="md:!text-[0.7rem] 2xl:!text-[1rem]">Email</span>
                   </button>
                 </a>
               </div>

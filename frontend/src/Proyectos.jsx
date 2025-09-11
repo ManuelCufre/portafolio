@@ -84,9 +84,9 @@ export default function Proyectos() {
         gestion23,
       ],
       tec: [
-        { nombre: "React.js", icono: <FaReact size={16} /> },
-        { nombre: "Express.js", icono: <SiExpress size={16} /> },
-        { nombre: "MySQL", icono: <FaDatabase size={14} /> },
+        { nombre: "React.js", icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
+        { nombre: "Express.js", icono: <SiExpress className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
+        { nombre: "MySQL", icono: <FaDatabase className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
       ],
       github_url : 'https://github.com/ManuelCufre/gestion_negocio.git',
       pagina_url : 'https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos'
@@ -116,9 +116,9 @@ export default function Proyectos() {
         tienda16,
       ],
       tec: [
-        { nombre: "React.js", icono: <FaReact size={16} /> },
-        { nombre: "Supabase", icono: <RiSupabaseFill size={16} /> },
-        { nombre: "PostgreSQL", icono: <DiPostgresql size={16} /> },
+        { nombre: "React.js", icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
+        { nombre: "Supabase", icono: <RiSupabaseFill className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
+        { nombre: "PostgreSQL", icono: <DiPostgresql className="lg:!text-[0.8rem] 2xl:!text-[1.1rem]"/> },
       ],
       github_url : 'https://github.com/ManuelCufre/tienda-online-react-supabase.git',
       pagina_url : 'https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos'
@@ -168,7 +168,7 @@ export default function Proyectos() {
         id="proyectos"
       >
         <div className="flex flex-col justify-center ">
-          <h1 className="bold monospace dark:text-white">PROYECTOS();</h1>
+          <h1 className="!font-bold monospace dark:text-white lg:!text-[1.3rem] 2xl:!text-[1.5rem]">PROYECTOS();</h1>
           <div className="w-30 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
 
@@ -188,12 +188,11 @@ export default function Proyectos() {
                 cursor="pointer"
               />
               <div className="flex flex-col justify-between w-[48%] h-[90%] p-8 ">
-                <h2 className="bold nata-sans dark:text-white">
+                <h2 className="!font-semibold nata-sans dark:text-white  lg:!text-[1rem] 2xl:!text-[1.5rem]">
                   {proyecto.titulo}
                 </h2>
                 <span
-                  className="nata-sans text-gray-700 dark:text-gray-200"
-                  style={{ fontSize: "0.9rem" }}
+                  className="nata-sans text-gray-700 dark:text-gray-200 lg:!text-[0.6rem] 2xl:!text-[0.9rem]"
                 >
                   {proyecto.descripción}
                 </span>
@@ -201,10 +200,10 @@ export default function Proyectos() {
                   {proyecto.tec.map((t) => (
                     <div
                       href=""
-                      className="flex gap-2 text-white items-center justify-center rounded-2xl !px-2 !py-1.5 bg-[#4b4b4b]  black:bg-[#4b4b4b]"
+                      className="flex gap-2 text-white items-center justify-center rounded-2xl lg:!px-2 lg:!py-[0.2rem] 2xl:!px-2 2xl:!py-1.5 bg-[#4b4b4b] black:bg-[#4b4b4b]"
                     >
                       {t.icono}
-                      <p className="" style={{ fontSize: "0.75rem" }}>
+                      <p className="lg:!text-[0.6rem] 2xl:!text-[0.75rem]" >
                         {t.nombre}
                       </p>
                     </div>
@@ -216,7 +215,7 @@ export default function Proyectos() {
                       className="
                     !bg-slate-700 hover:!bg-slate-600 
                     font-medium 
-                    h-9 w-30 cursor-pointer
+                    lg:!py-1.5 lg:!px-3 2xl:!py-1.5 2xl:!px-3.5 cursor-pointer
                     rounded-sm 
                     shadow-md 
                     hover:shadow-lg 
@@ -227,8 +226,8 @@ export default function Proyectos() {
                     group
                   "
                     >
-                      <FiGithub className="text-lg text-white group-hover:text-white/90 transition-colors" />
-                      <span className="text-white">GitHub</span>
+                      <FiGithub className="lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-white group-hover:text-white/90 transition-colors" />
+                      <span className="text-white lg:!text-[0.7rem] 2xl:!text-[0.9rem]">GitHub</span>
                     </button>
                   </a>
                   <a href={proyecto.pagina_url} target="_blank">
@@ -237,7 +236,7 @@ export default function Proyectos() {
                     !bg-teal-500 hover:!bg-teal-400 
                     text-white 
                     font-medium 
-                    h-9 w-30 cursor-pointer
+                    lg:!py-1.5 lg:!px-3 2xl:!py-1.5 2xl:!px-3.5 cursor-pointer
                     rounded-sm 
                     shadow-md hover:shadow-lg 
                     transition-all duration-300 
@@ -247,8 +246,8 @@ export default function Proyectos() {
                     group
                   "
                     >
-                      <FiExternalLink className="text-lg text-black  transition-colors" />
-                      <span className="text-black">Ver app</span>
+                      <FiExternalLink className="lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-black  transition-colors" />
+                      <span className="text-black lg:!text-[0.7rem] 2xl:!text-[0.9rem]">Ver app</span>
                     </button>
                   </a>
                 </div>
