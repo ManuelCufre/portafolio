@@ -111,7 +111,7 @@ export default function Curriculum() {
           <div className="w-[100%] min-h-[100%] grid sm:grid-cols-2 gap-4 md:gap-8">
             {/*Sobre mi*/}
             <div className="h-[9em] md:h-[8rem] xl:h-[9rem] 2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
-              <div className="w-[90%] h-[82%] flex flex-col gap-4 lg:gap-2 2xl:gap-6">
+              <div className="w-[90%] h-[82%] flex flex-col gap-4 2xl:gap-6">
                 <div className="flex items-center gap-4">
                   <PiUserCircleLight className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />
                   <h3
@@ -131,15 +131,15 @@ export default function Curriculum() {
             </div>
 
             {/*Formación*/}
-            <div className="w-full  2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
-              <div className="w-[90%] h-[82%] flex flex-col gap-4 lg:gap-2 2xl:gap-6 ">
+            <div className="w-full h-[9em] 2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
+              <div className="w-[90%] h-[82%] flex flex-col gap-4 2xl:gap-6 ">
                 <div className="flex items-center gap-4">
                   <PiGraduationCap className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />
                   <h3 className="!font-bold nata-sans text-gray-900 dark:text-white lg:!text-[1rem] xl:!text-[1.1rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
                     Formación
                   </h3>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 lg:gap-2">
                   <p className="text-black dark:text-white !font-semibold nata-sans !text-[0.75rem] lg:!text-[0.7rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem] ">
                     TECNICATURA SUPERIOR EN ANALISTA DE SISTEMAS
                   </p>
@@ -203,11 +203,11 @@ export default function Curriculum() {
                     Stack
                   </h3>
                 </div>
-                <div className="grid grid-cols-6  gap-3">
+                <div className="grid grid-cols-6 gap-3">
                   {tecnologias.map((tecnologia, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center justify-center gap-4 !px-7 !py-3 lg:!px-6 lg:!py-2 xl:!px-[1.9rem] xl:!py-3 2xl:!px-[2rem] 2xl:!py-[0.8rem] dark:text-white dark:bg-[#292929] rounded-sm shadow-sm   transition-transform duration-300 hover:scale-105"
+                      className="flex flex-col items-center justify-center gap-4 !px-6 !py-3 lg:!px-6 lg:!py-2 xl:!px-[1.9rem] xl:!py-3 2xl:!px-[2rem] 2xl:!py-[0.8rem] dark:text-white dark:bg-[#292929] rounded-sm shadow-sm   transition-transform duration-300 hover:scale-105"
                     >
                       {tecnologia.icono}
                       <p className="!text-[0.5rem] lg:!text-[0.55rem] 2xl:!text-[0.67rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.6rem] ">

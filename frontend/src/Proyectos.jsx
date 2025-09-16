@@ -213,14 +213,14 @@ export default function Proyectos() {
                 onClick={() => abrirVisor(proyecto.imagenes, 0)}
                 cursor="pointer"
               />
-              <div className="flex flex-col justify-center gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] p-8 ">
+              <div className="flex flex-col justify-center gap-1 lg:gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] !pt-2 md:!pt-0">
                 <h2 className="!font-semibold nata-sans dark:text-white !text-[0.7rem] lg:!text-[1rem] xl:!text-[1.25rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem]">
                   {proyecto.titulo}
                 </h2>
                 <span className="nata-sans text-gray-700 dark:text-gray-200 !text-[0.6rem] lg:!text-[0.6rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">
                   {proyecto.descripción}
                 </span>
-                <div className="flex gap-2">
+                <div className="flex gap-2 !pt-2 md:!pt-0">
                   {proyecto.tec.map((t) => (
                     <div
                       href=""
@@ -233,7 +233,7 @@ export default function Proyectos() {
                     </div>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 relative top-2 md:top-0">
                   <a href={proyecto.github_url} target="_blank">
                     <button
                       className="
