@@ -110,7 +110,7 @@ export default function Curriculum() {
         <div className="w-full min-h-[70vh] flex justify-around items-center  gap-8 rounded-2xl">
           <div className="w-[100%] min-h-[100%] grid sm:grid-cols-2 gap-4 md:gap-8">
             {/*Sobre mi*/}
-            <div className="h-[9em] md:h-[12rem] xl:h-[9rem] 2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
+            <div className="h-[9em] md:h-[8rem] xl:h-[9rem] 2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[82%] flex flex-col gap-4 lg:gap-2 2xl:gap-6">
                 <div className="flex items-center gap-4">
                   <PiUserCircleLight className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />
@@ -131,7 +131,7 @@ export default function Curriculum() {
             </div>
 
             {/*Formación*/}
-            <div className="w-full h-[9rem] md:h-[12rem] xl:h-[9rem] 2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
+            <div className="w-full  2xl:h-[12rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[10.5rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[82%] flex flex-col gap-4 lg:gap-2 2xl:gap-6 ">
                 <div className="flex items-center gap-4">
                   <PiGraduationCap className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />
@@ -155,7 +155,7 @@ export default function Curriculum() {
 
             
             {/*Experiencia*/}
-            <div className="w-full h-[16rem] md:h-[23rem] xl:h-[18rem] 2xl:h-[23rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[20rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white ">
+            <div className="w-full h-[16rem] xl:h-[18rem] 2xl:h-[23rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[20rem] flex justify-center items-center rounded-2xl text-black !border-1 !border-gray-300 bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 dark:bg-[#242424] dark:text-white ">
               <div className="w-[90%] h-[90%] flex flex-col gap-4 lg:gap-3 2xl:gap-8 ">
                 <div className="flex items-center gap-4">
                   <IoBagOutline className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />
@@ -195,7 +195,7 @@ export default function Curriculum() {
               </div>
             </div>
            {/*Stack*/}
-           <div className="h-[16rem] md:h-[23rem] xl:h-[18rem] 2xl:h-[23rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[20rem] flex justify-center items-center rounded-2xl hover:shadow-sm dark:hover:shadow-gray-700 text-black !border-1 !border-gray-300 bg-[#F2F2F2] dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
+           <div className="h-[16rem] xl:h-[18rem] 2xl:h-[23rem] [@media(min-width:1536px)_and_(max-width:1919px)]:h-[20rem] flex justify-center items-center rounded-2xl hover:shadow-sm dark:hover:shadow-gray-700 text-black !border-1 !border-gray-300 bg-[#F2F2F2] dark:!border-gray-600 dark:bg-[#242424] dark:text-white">
               <div className="w-[90%] h-[90%] flex flex-col gap-4 lg:gap-3 2xl:8gap ">
                 <div className="flex items-center gap-4">
                   <PiBracketsCurly className="text-teal-500 lg:!text-[1.3rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.5rem]" />

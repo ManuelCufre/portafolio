@@ -50,7 +50,7 @@ export default function Contacto() {
         <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
       </div>
       
-      <div className="w-full h-[33rem] xl:h-[60vh]  2xl:min-h-[70vh] flex flex-col justify-around rounded-2xl borde items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
+      <div className="w-full h-[33rem] md:h-[28rem] xl:h-[60vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-2xl borde items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
         <div className="w-[90%] md:w-[70%]">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex flex-col gap-4">
             {/* Campo Nombre */}
