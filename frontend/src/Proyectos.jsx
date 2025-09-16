@@ -6,7 +6,7 @@ import { RiSupabaseFill } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { SiExpress } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
-import imagenTiendaOnline from "./img/tienda-online-main.png"
+import imagenTiendaOnline from "./img/tienda-online-main.png";
 import tienda3 from "./img/tienda-online-3.png";
 import tienda4 from "./img/tienda-online-4.png";
 import tienda5 from "./img/tienda-online-5.png";
@@ -21,7 +21,7 @@ import tienda13 from "./img/tienda-online-13.png";
 import tienda14 from "./img/tienda-online-14.png";
 import tienda15 from "./img/tienda-online-15.png";
 import tienda16 from "./img/tienda-online-16.png";
-import imagenGestionNegocio from "./img/gestion-negocio-main.png"
+import imagenGestionNegocio from "./img/gestion-negocio-main.png";
 import gestion2 from "./img/gestion-negocio-2.png";
 import gestion3 from "./img/gestion-negocio-3.png";
 import gestion4 from "./img/gestion-negocio-4.png";
@@ -57,8 +57,7 @@ export default function Proyectos() {
       titulo: "Sistema de gestion de stock",
       descripción:
         "Sistema completo de gestión de inventario y stock desarrollado con React.js y Express.js. Permite la gestión total de productos, categorías, proveedores y movimientos de stock. Incluye funcionalidades de búsqueda avanzada, reportes de inventario y un dashboard intuitivo para el seguimiento en tiempo real del estado del negocio.",
-      imagen:
-      imagenGestionNegocio,
+      imagen: imagenGestionNegocio,
       imagenes: [
         gestion2,
         gestion3,
@@ -84,20 +83,28 @@ export default function Proyectos() {
         gestion23,
       ],
       tec: [
-        { nombre: "React.js", icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
-        { nombre: "Express.js", icono: <SiExpress className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
-        { nombre: "MySQL", icono: <FaDatabase className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
+        {
+          nombre: "React.js",
+          icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" />,
+        },
+        {
+          nombre: "Express.js",
+          icono: <SiExpress className="lg:!text-[0.75rem] 2xl:!text-[1rem]" />,
+        },
+        {
+          nombre: "MySQL",
+          icono: <FaDatabase className="lg:!text-[0.75rem] 2xl:!text-[1rem]" />,
+        },
       ],
-      github_url : 'https://github.com/ManuelCufre/gestion_negocio.git',
-      pagina_url : 'https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos'
+      github_url: "https://github.com/ManuelCufre/gestion_negocio.git",
+      pagina_url: "https://github.com/ManuelCufre/gestion_negocio.git",
     },
     {
       id: 2,
       titulo: "Tienda online",
       descripción:
         "E-commerce moderno y responsivo construido con React.js y Supabase. Ofrece una experiencia de compra completa con catálogo de productos, carrito de compras, sistema de autenticación de usuarios, procesamiento de pagos y panel de administración. Incluye funcionalidades como filtros avanzados, búsqueda en tiempo real y gestión completa de órdenes.",
-      imagen:
-      imagenTiendaOnline,
+      imagen: imagenTiendaOnline,
       imagenes: [
         imagenTiendaOnline,
         tienda3,
@@ -116,12 +123,27 @@ export default function Proyectos() {
         tienda16,
       ],
       tec: [
-        { nombre: "React.js", icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
-        { nombre: "Supabase", icono: <RiSupabaseFill className="lg:!text-[0.75rem] 2xl:!text-[1rem]" /> },
-        { nombre: "PostgreSQL", icono: <DiPostgresql className="lg:!text-[0.8rem] 2xl:!text-[1.1rem]"/> },
+        {
+          nombre: "React.js",
+          icono: <FaReact className="lg:!text-[0.75rem] 2xl:!text-[1rem]" />,
+        },
+        {
+          nombre: "Supabase",
+          icono: (
+            <RiSupabaseFill className="lg:!text-[0.75rem] 2xl:!text-[1rem]" />
+          ),
+        },
+        {
+          nombre: "PostgreSQL",
+          icono: (
+            <DiPostgresql className="lg:!text-[0.8rem] 2xl:!text-[1.1rem]" />
+          ),
+        },
       ],
-      github_url : 'https://github.com/ManuelCufre/tienda-online-react-supabase.git',
-      pagina_url : 'https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos'
+      github_url:
+        "https://github.com/ManuelCufre/tienda-online-react-supabase.git",
+      pagina_url:
+        "https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos",
     },
   ];
 
@@ -144,66 +166,68 @@ export default function Proyectos() {
 
   const irAnterior = useCallback(() => {
     if (activeImages.length === 0) return;
-    setActiveIndex((prev) => (prev - 1 + activeImages.length) % activeImages.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + activeImages.length) % activeImages.length
+    );
   }, [activeImages.length]);
 
   useEffect(() => {
     const onKeyDown = (e) => {
       if (!isViewerOpen) return;
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         cerrarVisor();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         irSiguiente();
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === "ArrowLeft") {
         irAnterior();
       }
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [isViewerOpen, activeImages.length, irAnterior, irSiguiente]);
   return (
     <>
       <div
-        className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 "
+        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 "
         id="proyectos"
       >
         <div className="flex flex-col justify-center ">
-          <h1 className="!font-bold monospace dark:text-white lg:!text-[1.3rem] 2xl:!text-[1.5rem]">PROYECTOS();</h1>
+          <h1 className="!font-bold monospace dark:text-white !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+            PROYECTOS();
+          </h1>
           <div className="w-30 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
 
         <div className="flex gap-6 flex-col w-full float-center ">
           {proyectos.map((proyecto) => (
             <div
-              className="flex items-center justify-around h-[35vh] rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2]  dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
+              className="flex flex-col md:flex-row items-center md:justify-around h-[26rem] md:h-[35vh] rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2]  dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
               key={proyecto.id}
             >
               <Image
                 src={proyecto.imagen}
                 height="90%"
-                width={'46%'}
+                className="w-[90%] md:w-[46%] relative top-4 md:top-0"
                 alt=""
                 borderRadius="2xl"
                 onClick={() => abrirVisor(proyecto.imagenes, 0)}
                 cursor="pointer"
               />
-              <div className="flex flex-col justify-between w-[48%] h-[90%] p-8 ">
-                <h2 className="!font-semibold nata-sans dark:text-white  lg:!text-[1rem] xl:!text-[1.25rem] 2xl:!text-[1.5rem]">
+              <div className="flex flex-col justify-center gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] p-8 ">
+                <h2 className="!font-semibold nata-sans dark:text-white !text-[0.7rem] lg:!text-[1rem] xl:!text-[1.25rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem]">
                   {proyecto.titulo}
                 </h2>
-                <span
-                  className="nata-sans text-gray-700 dark:text-gray-200 lg:!text-[0.6rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem]"
-                >
+                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-[0.6rem] lg:!text-[0.6rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">
                   {proyecto.descripción}
                 </span>
                 <div className="flex gap-2">
                   {proyecto.tec.map((t) => (
                     <div
                       href=""
-                      className="flex gap-2 text-white items-center justify-center rounded-2xl lg:!px-2 lg:!py-[0.2rem] 2xl:!px-2 2xl:!py-1.5 bg-[#4b4b4b] black:bg-[#4b4b4b]"
+                      className="!text-[0.8rem]  flex gap-2 text-white items-center justify-center rounded-2xl !py-1 !px-2 lg:!px-2 lg:!py-[0.2rem] 2xl:!px-2 2xl:!py-1.5 bg-[#4b4b4b] black:bg-[#4b4b4b]"
                     >
                       {t.icono}
-                      <p className="lg:!text-[0.6rem] 2xl:!text-[0.75rem]" >
+                      <p className="!text-[0.6rem]  lg:!text-[0.6rem] 2xl:!text-[0.75rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.65rem]">
                         {t.nombre}
                       </p>
                     </div>
@@ -215,7 +239,8 @@ export default function Proyectos() {
                       className="
                     !bg-slate-700 hover:!bg-slate-600 
                     font-medium 
-                    lg:!py-1.5 lg:!px-3 2xl:!py-1.5 2xl:!px-3.5 cursor-pointer
+                    !py-1 !px-2
+                    lg:!py-1.5 lg:!px-3 2xl:!py-1.5 2xl:!px-3.5  cursor-pointer
                     rounded-sm 
                     shadow-md 
                     hover:shadow-lg 
@@ -226,8 +251,10 @@ export default function Proyectos() {
                     group
                   "
                     >
-                      <FiGithub className="lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-white group-hover:text-white/90 transition-colors" />
-                      <span className="text-white lg:!text-[0.7rem] 2xl:!text-[0.9rem]">GitHub</span>
+                      <FiGithub className="!text-[0.8rem] lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-white group-hover:text-white/90 transition-colors" />
+                      <span className="text-white !text-[0.7rem]  lg:!text-[0.7rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.75rem]">
+                        GitHub
+                      </span>
                     </button>
                   </a>
                   <a href={proyecto.pagina_url} target="_blank">
@@ -236,6 +263,8 @@ export default function Proyectos() {
                     !bg-teal-500 hover:!bg-teal-400 
                     text-white 
                     font-medium 
+                                        !py-1 !px-2
+
                     lg:!py-1.5 lg:!px-3 2xl:!py-1.5 2xl:!px-3.5 cursor-pointer
                     rounded-sm 
                     shadow-md hover:shadow-lg 
@@ -246,8 +275,10 @@ export default function Proyectos() {
                     group
                   "
                     >
-                      <FiExternalLink className="lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-black  transition-colors" />
-                      <span className="text-black lg:!text-[0.7rem] 2xl:!text-[0.9rem]">Ver app</span>
+                      <FiExternalLink className="!text-[0.8rem] lg:!text-[0.75rem] 2xl:!text-[0.9rem] text-black  transition-colors" />
+                      <span className="text-black !text-[0.7rem] lg:!text-[0.7rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.75rem]">
+                        Ver app
+                      </span>
                     </button>
                   </a>
                 </div>
@@ -265,8 +296,6 @@ export default function Proyectos() {
             role="dialog"
             aria-modal="true"
           >
-          
-
             <button
               onClick={irAnterior}
               type="button"

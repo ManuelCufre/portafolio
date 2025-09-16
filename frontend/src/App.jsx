@@ -4,6 +4,7 @@ import Inicio from './Inicio'
 import Curriculum from './Curriculum'
 import Proyectos from './Proyectos'
 import Contacto from './Contacto'
+import Footer from './Footer'
 import useMode from './hooks/useMode'
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
   
  
   return (
-    <div className="bg-fondo-oscuro color-text-oscuro">
+    <div >
    
     <Header />
     <div className='w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-[#1E1E1F]' >
@@ -19,6 +20,7 @@ function App() {
     <Curriculum />
     <Proyectos />
     <Contacto />
+    <Footer />
     </div>
     </div>
   )

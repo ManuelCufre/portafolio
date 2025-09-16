@@ -44,18 +44,18 @@ export default function Contacto() {
   };
 
   return (
-    <div className="w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-4 dark:text-white" id="contacto">
+    <div className="w-[90%] md:w-[65%] md:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 dark:text-white" id="contacto">
       <div className="flex flex-col justify-center">
-        <h1 className="!font-bold monospace lg:!text-[1.3rem] 2xl:!text-[1.5rem]">CONTACTO();</h1>
+        <h1 className="!font-bold monospace !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">CONTACTO();</h1>
         <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
       </div>
       
-      <div className="w-full min-h-[70vh] flex flex-col justify-around rounded-2xl borde items-center p-8 !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
-        <div className="w-[70%]">
+      <div className="w-full h-[33rem] xl:h-[60vh]  2xl:min-h-[70vh] flex flex-col justify-around rounded-2xl borde items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 ">
+        <div className="w-[90%] md:w-[70%]">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex flex-col gap-4">
             {/* Campo Nombre */}
             <div>
-              <label htmlFor="nombre" className="block text-sm font-medium mb-1 nata-sans  black:text-gray-200 !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
+              <label htmlFor="nombre" className="block text-sm font-medium mb-1 nata-sans  black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
                 Nombre
               </label>
               <input
@@ -67,19 +67,19 @@ export default function Contacto() {
                     message: 'Máximo 50 caracteres'
                   }
                 })}
-                className="w-full lg:h-8 2xl:h-12 lg:!text-[0.75rem] 2xl:!text-[1rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                className="w-full rounded-md lg:h-8 2xl:h-12 [@media(min-width:1536px)_and_(max-width:1919px)]:h-10 !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Nombre completo"
                 style={{padding: '0.8rem'}}
                 autoComplete="off"
               />
               {errors.nombre && (
-                <p className="mt-1 text-sm text-red-400">{errors.nombre.message}</p>
+                <p className="mt-1 !text-xs text-red-400 [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem]">{errors.nombre.message}</p>
               )}
             </div>
 
             {/* Campo Email */}
             <div>
-              <label htmlFor="email" className="block text-sm mb-1 nata-sans black:text-gray-200 !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
+              <label htmlFor="email" className="block  mb-1 nata-sans black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
                 Email
               </label>
               <input
@@ -92,19 +92,19 @@ export default function Contacto() {
                     message: 'Email inválido'
                   }
                 })}
-                className="w-full lg:h-8 2xl:h-12 lg:!text-[0.75rem] 2xl:!text-[1rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                className="w-full rounded-md lg:h-8 2xl:h-12 [@media(min-width:1536px)_and_(max-width:1919px)]:h-10 !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Email"
                 style={{padding: '0.8rem'}}
                 autoComplete="off"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
+                <p className="mt-1 !text-xs text-red-400 [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem]">{errors.email.message}</p>
               )}
             </div>
 
              {/* Campo Asunto */}
             <div>
-              <label htmlFor="email" className="block text-sm mb-1 nata-sans black:text-gray-200 !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
+              <label htmlFor="email" className="block  mb-1 nata-sans black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]" style={{fontWeight: '600'}}>
                 Asunto
               </label>
               <input
@@ -121,13 +121,13 @@ export default function Contacto() {
                     message: 'Máximo 500 caracteres'
                   }
                 })}
-                className="w-full lg:h-8 2xl:h-12 lg:!text-[0.75rem] 2xl:!text-[1rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                className="w-full rounded-md lg:h-8 2xl:h-12 [@media(min-width:1536px)_and_(max-width:1919px)]:h-10  !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-gray-600 lg:rounded-xl 2xl:rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Asunto"
                 style={{padding: '0.8rem'}}
                 autoComplete="off"
               />
               {errors.asunto && (
-                <p className="mt-1 text-sm text-red-400">{errors.asunto.message}</p>
+                <p className="mt-1 !text-xs text-red-400 [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem]">{errors.asunto.message}</p>
               )}
             </div>
 
@@ -150,13 +150,13 @@ export default function Contacto() {
                   }
                 })}
                 rows="4"
-                className="w-full  lg:h-18 2xl:h-40 lg:!text-[0.75rem] 2xl:!text-[1rem] bg-[#FAFAFA] dark:bg-[#1E1E1F] !border-1 lg:rounded-xl 2xl:rounded-2xl dark:!border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                className="w-full rounded-md lg:h-18 2xl:h-40 [@media(min-width:1536px)_and_(max-width:1919px)]:h-20 !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem] bg-[#FAFAFA] dark:bg-[#1E1E1F] !border-1 lg:rounded-xl 2xl:rounded-2xl dark:!border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 placeholder="Escribe tu mensaje aquí..."
                 style={{padding: '0.8rem', resize: 'none'}}
                 autoComplete="off"
               ></textarea>
               {errors.mensaje && (
-                <p className="mt-1 text-sm text-red-400">{errors.mensaje.message}</p>
+                <p className="mt-1 !text-xs text-red-400 [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem]">{errors.mensaje.message}</p>
               )}
             </div>
 
@@ -202,7 +202,7 @@ export default function Contacto() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`!py-1.5 !px-3.5 lg:!text-xs 2xl:!text-[0.9rem] self-center cursor-pointer !text-black !bg-teal-500 hover:bg-teal-400 font-medium rounded-md shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 ${
+              className={`!py-1.5 !px-3.5 !text-[0.7rem] lg:!text-xs 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.75rem] self-center cursor-pointer !text-black !bg-teal-500 hover:bg-teal-400 font-medium rounded-md shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 ${
                 isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >

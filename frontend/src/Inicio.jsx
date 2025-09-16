@@ -13,7 +13,7 @@ export default function Inicio() {
 
   return (
     <div
-      className="w-[65%] min-h-[90vh] flex justify-center items-center fira-code"
+      className="w-[90%] md:w-[65%] min-h-[100vh] flex justify-center items-center fira-code"
       id="inicio"
     >
       <div className="w-full min-h-[50vh] flex gap-8 justify-center items-center rounded-2xl  bg-[#FAFAFA] dark:bg-[#1E1E1F] ">
@@ -21,15 +21,15 @@ export default function Inicio() {
           <div className="w-[100%]">
             <div className="flex flex-col ">
               <h2
-                className="!font-bold md:!text-[1.7rem] 2xl:!text-[3rem] text-gray-700 dark:text-white text-2xl "
+                className="!font-bold !text-[2rem] md:!text-[1.7rem] 2xl:!text-[3rem] text-gray-700 dark:text-white text-2xl [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[2.1rem]"
               >
                 Hola soy Manuel Cufré
               </h2>
-              <h2 className=" text-teal-500 !font-bold md:!text-[1.4rem] 2xl:!text-[2rem]" >
+              <h2 className=" text-teal-500 !font-bold !text-[1.7rem] md:!text-[1.4rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.8rem]" >
                 Analista de sistemas
               </h2>
               <p
-                className="text-gray-700 dark:text-gray-300 text-sm md:!text-[0.9rem] 2xl:!text-[1.2rem]"
+                className="text-gray-700 dark:text-gray-300  !text-[0.9rem] md:!text-[0.9rem] 2xl:!text-[1.2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1rem]"
               >
                 Soy una analista de sistemas especializado en el desarrollo web
                 Full-Stack, que disfruta transformar ideas en aplicaciones web
@@ -53,7 +53,7 @@ export default function Inicio() {
                     active:translate-y-0 active:scale-95"
                 >
                   <FiGithub
-                    className="md:!text-[1rem] 2xl:!text-[1.3rem] text-teal-600 hover:text-teal-500"
+                    className="!text-[0.7rem] md:!text-[1rem] 2xl:!text-[1.3rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem] text-teal-600 hover:text-teal-500"
                   />
                 </a>
                 <a
@@ -66,7 +66,7 @@ export default function Inicio() {
                 >
                   <FaLinkedinIn
                     
-                    className="md:!text-[1rem] 2xl:!text-[1.3rem] text-teal-600 hover:text-teal-500"
+                    className="!text-[0.7rem] md:!text-[1rem] 2xl:!text-[1.3rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem] text-teal-600 hover:text-teal-500"
                   />
                 </a>
                 <a href={Cv} download={Cv}>
@@ -84,7 +84,7 @@ export default function Inicio() {
                     group"
                   >
                     <IoMdDownload className="md:!text-[1.2rem] 2xl:!text-[1.2rem]" />
-                    <span className="md:!text-[0.7rem] 2xl:!text-[1rem]">DescargarCV</span>
+                    <span className="!text-[0.7rem] md:!text-[0.7rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">DescargarCV</span>
                   </button>
                 </a>
                 <a href="mailto:manuelcufree@gmail.com?subject=Contacto desde tu portafolio">
@@ -102,7 +102,7 @@ export default function Inicio() {
                     group"
                   >
                     <IoIosMail className="md:!text-[1.1rem] 2xl:!text-[1.2rem]"/>
-                    <span className="md:!text-[0.7rem] 2xl:!text-[1rem]">Email</span>
+                    <span className="!text-[0.7rem] md:!text-[0.7rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">Email</span>
                   </button>
                 </a>
               </div>

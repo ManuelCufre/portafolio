@@ -1,6 +1,7 @@
 import { FaCode } from "react-icons/fa6";
 import { MdOutlineLightMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import useMode from "./hooks/useMode";
@@ -8,12 +9,12 @@ export default function Header() {
   const { modo, setModo, handleModo } = useMode();
 
   return (
-    <header className="w-full z-1000 md:h-12 2xl:h-14  fixed flex items-center justify-center ">
-      <div className="w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl text-black bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 !border-1 !border-gray-300 dark:bg-[#242424] dark:text-white  dark:!border-gray-600">
+    <header className="w-full z-1000 h-10 md:h-12 2xl:h-14 [@media(min-width:1536px)_and_(max-width:1919px)]:h-12 fixed flex items-center justify-center ">
+      <div className="w-[90%] md:w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl text-black bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 !border-1 !border-gray-300 dark:bg-[#242424] dark:text-white  dark:!border-gray-600">
         <div className="flex justify-center items-center gap-2 relative left-4">
           <FaCode className="text-teal-400" />
           <h2
-            className="text-l font-bold nata-sans !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+            className="text-l font-bold nata-sans !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]"
             style={{ fontSize: "0.9rem" }}
           >
             Manuel Agustín Cufré
@@ -21,7 +22,7 @@ export default function Header() {
         </div>
         <nav>
           <ul
-            className="flex gap-8 items-center relative right-4 nata-sans  md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+            className="hidden sm:flex gap-8 items-center relative right-4 nata-sans  sm:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]"
           >
             {/* Inicio */}
             <li className="group relative">
