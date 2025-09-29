@@ -7,7 +7,7 @@ import { Button } from "@chakra-ui/react";
 import { PiBracketsCurly } from "react-icons/pi";
 import useMode from "./hooks/useMode";
 import { FaLinkedinIn } from "react-icons/fa";
-import Cv from "./Manuel Agustín Cufré CV.pdf";
+import Cv from "./Currículum Vitae - Manuel Cufre.pdf";
 export default function Inicio() {
   const { modo } = useMode();
 

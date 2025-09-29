@@ -6,7 +6,8 @@ import { RiSupabaseFill } from "react-icons/ri";
 import { FiExternalLink } from "react-icons/fi";
 import { SiExpress } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa";
-import imagenTiendaOnline from "./img/tienda-online-main.png";
+import imagenTiendaOnline from "./img/tienda-online-1.png";
+import tienda2 from "./img/tienda-online-2.png";
 import tienda3 from "./img/tienda-online-3.png";
 import tienda4 from "./img/tienda-online-4.png";
 import tienda5 from "./img/tienda-online-5.png";
@@ -20,7 +21,6 @@ import tienda12 from "./img/tienda-online-12.png";
 import tienda13 from "./img/tienda-online-13.png";
 import tienda14 from "./img/tienda-online-14.png";
 import tienda15 from "./img/tienda-online-15.png";
-import tienda16 from "./img/tienda-online-16.png";
 import imagenGestionNegocio from "./img/gestion-negocio-main.png";
 import gestion2 from "./img/gestion-negocio-2.png";
 import gestion3 from "./img/gestion-negocio-3.png";
@@ -107,6 +107,7 @@ export default function Proyectos() {
       imagen: imagenTiendaOnline,
       imagenes: [
         imagenTiendaOnline,
+        tienda2,
         tienda3,
         tienda4,
         tienda5,
@@ -120,7 +121,6 @@ export default function Proyectos() {
         tienda13,
         tienda14,
         tienda15,
-        tienda16,
       ],
       tec: [
         {
@@ -143,7 +143,7 @@ export default function Proyectos() {
       github_url:
         "https://github.com/ManuelCufre/tienda-online-react-supabase.git",
       pagina_url:
-        "https://tienda-online-react-supabase-nlq06i79n.vercel.app/productos",
+        "https://tienda-online-react-supabase.vercel.app",
     },
   ];
 
