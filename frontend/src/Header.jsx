@@ -39,14 +39,14 @@ export default function Header() {
     "
               ></div>
             </li>
-
-            {/* Curriculum */}
+            
+            {/* Proyectos */}
             <li className="group relative">
               <a
-                href="#curriculum"
+                href="#proyectos"
                 className="hover:text-teal-400 transition-colors"
               >
-                Curriculum
+                Proyectos
               </a>
               <div
                 className="
@@ -56,13 +56,13 @@ export default function Header() {
               ></div>
             </li>
 
-            {/* Proyectos */}
+            {/* Curriculum */}
             <li className="group relative">
               <a
-                href="#proyectos"
+                href="#curriculum"
                 className="hover:text-teal-400 transition-colors"
               >
-                Proyectos
+                Curriculum
               </a>
               <div
                 className="

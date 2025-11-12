@@ -43,7 +43,6 @@ import gestion19 from "./img/gestion-negocio-19.png";
 import gestion20 from "./img/gestion-negocio-20.png";
 import gestion21 from "./img/gestion-negocio-21.png";
 import gestion22 from "./img/gestion-negocio-22.png";
-import gestion23 from "./img/gestion-negocio-23.png";
 import { DiPostgresql } from "react-icons/di";
 
 export default function Proyectos() {
@@ -80,7 +79,6 @@ export default function Proyectos() {
         gestion20,
         gestion21,
         gestion22,
-        gestion23,
       ],
       tec: [
         {

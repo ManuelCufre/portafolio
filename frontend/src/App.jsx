@@ -17,8 +17,8 @@ function App() {
     <Header />
     <div className='w-full flex flex-col items-center bg-[#FAFAFA] dark:bg-[#1E1E1F]' >
     <Inicio /> 
-    <Curriculum />
     <Proyectos />
+    <Curriculum />
     <Contacto />
     <Footer />
     </div>
