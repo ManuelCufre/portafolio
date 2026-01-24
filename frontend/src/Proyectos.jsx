@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Image } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
 import { FiGithub, FiX, FiChevronLeft, FiChevronRight } from "react-icons/fi";
@@ -56,7 +57,7 @@ export default function Proyectos() {
       titulo: "Sistema de gestion de stock",
       descripción:
         "Sistema completo de gestión de inventario y stock desarrollado con React.js y Express.js. Permite la gestión total de productos, categorías, proveedores y movimientos de stock. Incluye funcionalidades de búsqueda avanzada, reportes de inventario y un dashboard intuitivo para el seguimiento en tiempo real del estado del negocio.",
-      imagen: imagenGestionNegocio,
+      imagen: gestion2,
       imagenes: [
         gestion2,
         gestion3,
@@ -140,10 +141,28 @@ export default function Proyectos() {
       ],
       github_url:
         "https://github.com/ManuelCufre/tienda-online-react-supabase.git",
-      pagina_url:
-        "https://tienda-online-react-supabase.vercel.app",
+      pagina_url: "https://tienda-online-react-supabase.vercel.app",
     },
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 2 },
+    },
+  };
 
   const abrirVisor = (imagenes, indexInicial = 0) => {
     setActiveImages(imagenes);
@@ -165,7 +184,7 @@ export default function Proyectos() {
   const irAnterior = useCallback(() => {
     if (activeImages.length === 0) return;
     setActiveIndex(
-      (prev) => (prev - 1 + activeImages.length) % activeImages.length
+      (prev) => (prev - 1 + activeImages.length) % activeImages.length,
     );
   }, [activeImages.length]);
 
@@ -186,7 +205,7 @@ export default function Proyectos() {
   return (
     <>
       <div
-        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 "
+        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 snap-start"
         id="proyectos"
       >
         <div className="flex flex-col justify-center ">
@@ -198,8 +217,17 @@ export default function Proyectos() {
 
         <div className="flex gap-6 flex-col w-full float-center ">
           {proyectos.map((proyecto) => (
-            <div
-              className="flex flex-col md:flex-row items-center md:justify-around h-[26rem] md:h-[35vh] rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2]  dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-gray-600 "
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              whileHover={{
+                y: -6,
+                scale: 1.01,
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="flex flex-col md:flex-row items-center md:justify-around h-[26rem] md:h-[35vh] rounded-2xl !border-1 !border-gray-300 bg-[#F2F2F2]  dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]"
               key={proyecto.id}
             >
               <Image
@@ -281,7 +309,7 @@ export default function Proyectos() {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

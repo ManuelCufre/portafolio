@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header className="w-full z-1000 h-10 md:h-12 2xl:h-14 [@media(min-width:1536px)_and_(max-width:1919px)]:h-12 fixed flex items-center justify-center ">
-      <div className="w-[90%] md:w-[65%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl text-black bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 !border-1 !border-gray-300 dark:bg-[#242424] dark:text-white  dark:!border-gray-600">
+      <div className="w-[90%] md:w-[64.5%] h-full relative top-2 flex items-center justify-between px-8  rounded-xl text-black bg-[#F2F2F2] hover:shadow-sm dark:hover:shadow-gray-700 !border-1 !border-gray-300 dark:bg-[#242424] dark:text-white dark:!border-[#383838] dark:hover:!border-[#404040]">
         <div className="flex justify-center items-center gap-2 relative left-4">
           <FaCode className="text-teal-400" />
           <h2
@@ -56,13 +56,13 @@ export default function Header() {
               ></div>
             </li>
 
-            {/* Curriculum */}
+             {/* Servicios */}
             <li className="group relative">
               <a
-                href="#curriculum"
+                href="#servicios"
                 className="hover:text-teal-400 transition-colors"
               >
-                Curriculum
+                Servicios
               </a>
               <div
                 className="
@@ -71,6 +71,24 @@ export default function Header() {
     "
               ></div>
             </li>
+
+            {/* Habilidades */}
+            <li className="group relative">
+              <a
+                href="#habilidades"
+                className="hover:text-teal-400 transition-colors"
+              >
+                Habilidades
+              </a>
+              <div
+                className="
+      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
+      w-0 group-hover:w-full transition-all duration-300
+    "
+              ></div>
+            </li>
+
+          
 
             {/* Contacto */}
             <li className="group relative">

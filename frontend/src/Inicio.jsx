@@ -1,115 +1,146 @@
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { IoIosMail } from "react-icons/io";
 import { IoMdDownload } from "react-icons/io";
 import { FiGithub } from "react-icons/fi";
-import { FaCode } from "react-icons/fa6";
-import { Button } from "@chakra-ui/react";
-import { PiBracketsCurly } from "react-icons/pi";
-import useMode from "./hooks/useMode";
 import { FaLinkedinIn } from "react-icons/fa";
-import Cv from "./Currículum Vitae - Manuel Cufre.pdf";
+import useMode from "./hooks/useMode";
+import Cv from "./CV - Manuel Agustín Cufré.pdf";
+import { useState, useEffect } from "react";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Inicio() {
   const { modo } = useMode();
 
+  const text = "Analista de Sistemas";
+  const [displayed, setDisplayed] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setDisplayed(text.slice(0, i));
+      i++;
+      if (i > text.length) clearInterval(interval);
+    }, 80);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
-      className="w-[90%] md:w-[65%] min-h-[100vh] flex justify-center items-center fira-code"
+      className="w-[90%] md:w-[65%] min-h-[100vh] flex justify-center items-center fira-code snap-start"
       id="inicio"
     >
-      <div className="w-full min-h-[50vh] flex gap-8 justify-center items-center rounded-2xl  bg-[#FAFAFA] dark:bg-[#1E1E1F] ">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="w-full min-h-[50vh] flex gap-8 justify-center items-center rounded-2xl bg-[#FAFAFA] dark:bg-[#1E1E1F]"
+      >
         <div className="flex relative top-16 gap-16 items-center nata-sans">
           <div className="w-[100%]">
-            <div className="flex flex-col ">
-              <h2
-                className="!font-bold !text-[2rem] md:!text-[1.7rem] 2xl:!text-[3rem] text-gray-700 dark:text-white text-2xl [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[2.1rem]"
+            <motion.div className="flex flex-col" variants={itemVariants}>
+              <motion.h2
+                variants={itemVariants}
+                className="!font-bold !text-[2rem] md:!text-[1.9rem] 2xl:!text-[3.2rem] text-gray-700 dark:text-white"
               >
                 Hola soy Manuel Cufré
-              </h2>
-              <h2 className=" text-teal-500 !font-bold !text-[1.7rem] md:!text-[1.4rem] 2xl:!text-[2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.8rem]" >
-                Analista de sistemas
-              </h2>
-              <p
-                className="text-gray-700 dark:text-gray-300  !text-[0.9rem] md:!text-[0.9rem] 2xl:!text-[1.2rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1rem]"
+              </motion.h2>
+
+              <motion.h2
+                variants={itemVariants}
+                className="text-teal-500 !font-bold !text-[1.7rem] md:!text-[1.6rem] 2xl:!text-[2.2rem]"
+              >
+                {displayed}
+              </motion.h2>
+
+              <motion.p
+                variants={itemVariants}
+                className="text-gray-700 dark:text-gray-300 !text-[0.9rem] md:!text-[1rem] 2xl:!text-[1.3rem]"
               >
                 Soy una analista de sistemas especializado en el desarrollo web
                 Full-Stack, que disfruta transformar ideas en aplicaciones web
                 modernas, dinámicas y fáciles de usar. Mi objetivo en crear
-                aplicaciones que combinan funcionalidad, rendimiento y
-                diseño atractivo, priorizando siempre la experiencia del
-                usuario. Mi enfoque está en desarrollar soluciones escalables y
-                eficientes que aporten valor real a cada proyecto.
-              </p>
-            </div>
+                aplicaciones que combinan funcionalidad, rendimiento y diseño
+                atractivo, priorizando siempre la experiencia del usuario. Mi
+                enfoque está en desarrollar soluciones escalables y eficientes
+                que aporten valor real a cada proyecto.
+              </motion.p>
+            </motion.div>
 
-            {/* github */}
-            <div className="w-[%100] h-40 flex items-center justify-center ">
-              <div className="flex gap-2 w-[34%] text-center justify-center items-center rounded-md  ">
-                <a
+            {/* ICONOS + BOTONES */}
+            <motion.div
+              variants={itemVariants}
+              className="w-[%100] h-40 flex items-center justify-center"
+            >
+              <div className="flex gap-2 w-[34%] justify-center items-center">
+                {/* GitHub */}
+                <motion.a
+                  whileHover={{ y: -4, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://github.com/ManuelCufre"
                   target="_blank"
-                  className="!p-2  !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
-                    transition-all duration-300 
-                    transform hover:-translate-y-0.5 
-                    active:translate-y-0 active:scale-95"
+                  className="!p-2 !border-1 !border-teal-600 rounded-full"
                 >
-                  <FiGithub
-                    className="!text-[0.7rem] md:!text-[1rem] 2xl:!text-[1.3rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem] text-teal-600 hover:text-teal-500"
-                  />
-                </a>
-                <a
+                  <FiGithub className="text-teal-600 md:!text-[1rem]" />
+                </motion.a>
+
+                {/* LinkedIn */}
+                <motion.a
+                  whileHover={{ y: -4, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://www.linkedin.com/in/manuel-agustin-cufre/"
                   target="_blank"
-                  className="!p-2 !border-1 !border-teal-600 hover:!border-teal-500 rounded-full flex items-center justify-center hover:shadow-lg cursor-pointer
-                    transition-all duration-300 
-                    transform hover:-translate-y-0.5 
-                    active:translate-y-0 active:scale-95"
+                  className="!p-2 !border-1 !border-teal-600 rounded-full"
                 >
-                  <FaLinkedinIn
-                    
-                    className="!text-[0.7rem] md:!text-[1rem] 2xl:!text-[1.3rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem] text-teal-600 hover:text-teal-500"
-                  />
-                </a>
+                  <FaLinkedinIn className="text-teal-600 md:!text-[1rem]" />
+                </motion.a>
+
+                {/* CV */}
                 <a href={Cv} download={Cv}>
-                  <button
-                    className="!bg-teal-500 hover:!bg-teal-500 cursor-pointer
-                    text-black 
-                    dark:text-white
-                    !py-1.5 !px-3
-                    rounded-sm 
-                    shadow-md hover:shadow-lg 
-                    transition-all duration-300 
-                    transform hover:-translate-y-0.5 
-                    active:translate-y-0 active:scale-95
-                    flex items-center justify-center gap-2
-                    group"
+                  <motion.button
+                    whileHover={{ y: -4, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="!bg-teal-500 !py-1.5 !px-3 rounded-sm shadow-md flex items-center gap-2"
                   >
-                    <IoMdDownload className="md:!text-[1.2rem] 2xl:!text-[1.2rem]" />
-                    <span className="!text-[0.7rem] md:!text-[0.7rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">DescargarCV</span>
-                  </button>
+                    <IoMdDownload />
+                    <span className="!text-[0.7rem]">Curriculum</span>
+                  </motion.button>
                 </a>
+
+                {/* Email */}
                 <a href="mailto:manuelcufree@gmail.com?subject=Contacto desde tu portafolio">
-                  <button
-                    className="!bg-teal-500 hover:!bg-teal-500 
-                    font-medium 
-                    !py-1.5 !px-3 cursor-pointer
-                    rounded-sm 
-                    shadow-md 
-                    hover:shadow-lg 
-                    transition-all duration-300 
-                    transform hover:-translate-y-0.5 
-                    active:translate-y-0 active:scale-95
-                    flex items-center justify-center gap-2
-                    group"
+                  <motion.button
+                    whileHover={{ y: -4, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="!bg-teal-500 !py-1.5 !px-3 rounded-sm shadow-md flex items-center gap-2"
                   >
-                    <IoIosMail className="md:!text-[1.1rem] 2xl:!text-[1.2rem]"/>
-                    <span className="!text-[0.7rem] md:!text-[0.7rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">Email</span>
-                  </button>
+                    <IoIosMail />
+                    <span className="!text-[0.7rem]">Email</span>
+                  </motion.button>
                 </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
