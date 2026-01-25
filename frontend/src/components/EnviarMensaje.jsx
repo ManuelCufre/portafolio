@@ -20,10 +20,8 @@ export default function EnviarMensaje() {
     setSubmitStatus({ message: "", isError: false });
 
     try {
-      const baseUrl = (
-        import.meta.env.VITE_API_URL || "http://localhost:3001"
-      ).replace(/\/+$/, "");
-      const response = await fetch(`${baseUrl}/send-email`, {
+     
+      const response = await fetch('https://portafolio-manuelcufre.vercel.app/', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
