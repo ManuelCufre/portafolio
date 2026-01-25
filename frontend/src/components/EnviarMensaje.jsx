@@ -21,7 +21,7 @@ export default function EnviarMensaje() {
 
     try {
      
-      const response = await fetch('https://portafolio-manuelcufre.vercel.app/', {
+      const response = await fetch('https://backend-portafolio-beige.vercel.app/api/send-email', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
