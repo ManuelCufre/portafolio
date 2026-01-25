@@ -1,7 +1,3 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+  "buildCommand": "echo 'backend only - see root vercel.json'"
 }
