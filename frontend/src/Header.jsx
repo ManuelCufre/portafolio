@@ -72,6 +72,22 @@ export default function Header() {
               ></div>
             </li>
 
+            {/* Trayectoria */}
+            <li className="group relative">
+              <a
+                href="#trayectoria"
+                className="hover:text-teal-400 transition-colors"
+              >
+                Trayectoria
+              </a>
+              <div
+                className="
+      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
+      w-0 group-hover:w-full transition-all duration-300
+    "
+              ></div>
+            </li>
+
             {/* Habilidades */}
             <li className="group relative">
               <a

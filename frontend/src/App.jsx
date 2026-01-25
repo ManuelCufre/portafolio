@@ -3,6 +3,7 @@ import Inicio from './Inicio'
 import Curriculum from './Curriculum'
 import Proyectos from './Proyectos'
 import Servicios from './Servicios'
+import Trayectoria from './Trayectoria'
 import Habilidades from './Habilidades'
 import Contacto from './Contacto'
 import Footer from './Footer'
@@ -31,6 +32,7 @@ function App() {
         <Inicio />
         <Proyectos />
         <Servicios />
+        <Trayectoria />
         <Habilidades />
         <Contacto />
         <Footer />
