@@ -45,6 +45,7 @@ import gestion20 from "./img/gestion-negocio-20.png";
 import gestion21 from "./img/gestion-negocio-21.png";
 import gestion22 from "./img/gestion-negocio-22.png";
 import { DiPostgresql } from "react-icons/di";
+import { GrProjects } from "react-icons/gr";
 
 export default function Proyectos() {
   const [isViewerOpen, setIsViewerOpen] = useState(false);
@@ -208,13 +209,14 @@ export default function Proyectos() {
         className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 snap-start"
         id="proyectos"
       >
-        <div className="flex flex-col justify-center ">
-          <h1 className="!font-bold monospace dark:text-white !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
-            PROYECTOS();
+        <div className="flex gap-2 items-center">
+          <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
+            <GrProjects className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
+          </div>
+          <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+            Mis Proyectos
           </h1>
-          <div className="w-30 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
-
         <div className="flex gap-6 flex-col w-full float-center ">
           {proyectos.map((proyecto) => (
             <motion.div

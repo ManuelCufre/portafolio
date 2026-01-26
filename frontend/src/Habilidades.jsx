@@ -25,7 +25,6 @@ import { GrMysql } from "react-icons/gr";
 import { DiJavascript } from "react-icons/di";
 import { IoLogoVercel } from "react-icons/io5";
 
-
 import useMode from "./hooks/useMode";
 
 const iconClass =
@@ -33,21 +32,21 @@ const iconClass =
 
 const getIconColor = (nombre) => {
   const colorMap = {
-    "HTML": "text-orange-600",
-    "CSS": "text-blue-600",
-    "JavaScript": "text-yellow-500",
+    HTML: "text-orange-600",
+    CSS: "text-blue-600",
+    JavaScript: "text-yellow-500",
     "React.js": "text-cyan-400",
-    "Tailwind": "text-cyan-400",
+    Tailwind: "text-cyan-400",
     "Node.js": "text-green-600",
     "Express.js": "text-gray-600 dark:text-gray-300",
-    "MySQL": "text-blue-800",
-    "PostgreSQL": "text-blue-700",
-    "Supabase": "text-green-500",
-    "Git": "text-orange-700",
-    "GitHub": "text-gray-800 dark:text-gray-100",
-    "VSC": "text-blue-500",
-    "Docker": "text-blue-500",
-    "Vercel": "text-black dark:text-white",
+    MySQL: "text-blue-800",
+    PostgreSQL: "text-blue-700",
+    Supabase: "text-green-500",
+    Git: "text-orange-700",
+    GitHub: "text-gray-800 dark:text-gray-100",
+    VSC: "text-blue-500",
+    Docker: "text-blue-500",
+    Vercel: "text-black dark:text-white",
   };
   return colorMap[nombre] || "";
 };
@@ -80,7 +79,9 @@ const categoriasTecnologias = [
   },
   {
     nombre: "Express.js",
-    icono: <SiExpress className={`${iconClass} text-gray-600 dark:text-gray-300`} />,
+    icono: (
+      <SiExpress className={`${iconClass} text-gray-600 dark:text-gray-300`} />
+    ),
   },
   {
     nombre: "MySQL",
@@ -101,7 +102,9 @@ const categoriasTecnologias = [
   },
   {
     nombre: "GitHub",
-    icono: <FaGithub className={`${iconClass} text-gray-800 dark:text-gray-100`} />,
+    icono: (
+      <FaGithub className={`${iconClass} text-gray-800 dark:text-gray-100`} />
+    ),
   },
   {
     nombre: "VSC",
@@ -111,9 +114,11 @@ const categoriasTecnologias = [
     nombre: "Docker",
     icono: <FaDocker className={`${iconClass} text-blue-500`} />,
   },
-   {
+  {
     nombre: "Vercel",
-    icono: <IoLogoVercel className={`${iconClass} text-black dark:text-white`} />,
+    icono: (
+      <IoLogoVercel className={`${iconClass} text-black dark:text-white`} />
+    ),
   },
 ];
 
@@ -143,11 +148,13 @@ export default function Habilidades() {
         className="snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0 items-center fira-code "
         id="habilidades"
       >
-        <div className="flex flex-col justify-center">
-          <h1 className="!font-bold monospace text-black dark:text-white !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
-            HABILIDADES();
+        <div className="flex gap-2 items-center">
+          <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
+            <FaCode className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
+          </div>
+          <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+            Mis Habilidades
           </h1>
-          <div className=" w-33 h-[3px] bg-teal-500 rounded-md"></div>
         </div>
 
         <div className="w-full min-h-[70vh] flex flex-col gap-8 justify-center items-center rounded-2xl">

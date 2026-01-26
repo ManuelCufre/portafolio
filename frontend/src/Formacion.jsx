@@ -1,4 +1,6 @@
 import { PiGraduationCap } from "react-icons/pi";
+import { motion } from "framer-motion";
+
 
 const educacion = [
   {
@@ -27,9 +29,28 @@ const educacion = [
 
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4 },
+  },
+};
+
 export default function Formacion() {
   return (
-    <div
+    <motion.div
       className="
         w-full 
         md:h-[28rem] 
@@ -38,7 +59,8 @@ export default function Formacion() {
         flex 
         flex-col 
         gap-6 
-        !p-6 
+        !p-3
+        lg:!p-6 
         rounded-md 
         !border-1 
         !border-gray-300 
@@ -48,6 +70,10 @@ export default function Formacion() {
         dark:hover:shadow-gray-700 
         dark:!border-[#383838]
       "
+       variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
     >
       {/* Header */}
       <div className="flex gap-3 items-center">
@@ -72,10 +98,12 @@ export default function Formacion() {
             !w-[1px] 
             !bg-gray-500
           "
+         
         />
 
         {educacion.map((item, index) => (
-          <div key={index} className="relative flex flex-col !gap-2">
+          <motion.div key={index} className="relative flex flex-col !gap-2" 
+         >
 
             {/* Punto */}
             <div
@@ -93,7 +121,7 @@ export default function Formacion() {
               "
             />
 
-            <span className="monospace !text-[0.85rem] !text-gray-500 dark:!text-gray-400">
+            <span className="monospace !text-[0.75rem] lg:!text-[0.85rem] !text-gray-500 dark:!text-gray-400">
               {item.periodo}
             </span>
 
@@ -119,7 +147,8 @@ export default function Formacion() {
                     dark:bg-[#383838] 
                     text-black 
                     dark:text-white 
-                    !text-[0.7rem] 
+                     !text-[0.6rem] 
+                    lg:!text-[0.7rem] 
                     !px-2 
                     !py-1 
                     rounded-full 
@@ -132,9 +161,9 @@ export default function Formacion() {
               ))}
             </div>
 
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

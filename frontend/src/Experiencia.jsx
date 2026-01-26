@@ -1,4 +1,5 @@
 import { IoBagOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const experiencias = [
   {
@@ -20,12 +21,30 @@ const experiencias = [
       "Administración de software",
     ],
   },
-  // 👉 mañana agregás otro objeto acá y aparece solo
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4 },
+  },
+};
 
 export default function Experiencia() {
   return (
-    <div
+    <motion.div
       className="
         w-full 
         md:h-[28rem] 
@@ -34,7 +53,8 @@ export default function Experiencia() {
         flex 
         flex-col 
         gap-6 
-        !p-6 
+        !p-3
+        lg:!p-6 
         rounded-md 
         !border-1 
         !border-gray-300 
@@ -44,6 +64,10 @@ export default function Experiencia() {
         dark:hover:shadow-gray-700 
         dark:!border-[#383838]
       "
+       variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
     >
       {/* Header */}
       <div className="flex gap-3 items-center">
@@ -58,7 +82,7 @@ export default function Experiencia() {
       {/* Timeline */}
       <div className="relative !pl-6 flex flex-col !gap-10">
         {/* Línea vertical */}
-        <div
+        <motion.div
           className="
             absolute 
             !left-[6px] 
@@ -70,7 +94,11 @@ export default function Experiencia() {
         />
 
         {experiencias.map((exp, index) => (
-          <div key={index} className="relative flex flex-col !gap-2">
+          <motion.div
+            key={index}
+            className="relative flex flex-col !gap-2 "
+            
+          >
             {/* Punto */}
             <div
               className="
@@ -87,7 +115,7 @@ export default function Experiencia() {
               "
             />
 
-            <span className="monospace !text-[0.85rem] !text-gray-500 dark:!text-gray-400">
+            <span className="monospace !text-[0.75rem] lg:!text-[0.85rem] !text-gray-500 dark:!text-gray-400">
               {exp.periodo}
             </span>
 
@@ -128,7 +156,8 @@ export default function Experiencia() {
                     dark:bg-[#383838] 
                     text-black 
                     dark:text-white 
-                    !text-[0.7rem] 
+                    !text-[0.6rem] 
+                    lg:!text-[0.7rem] 
                     !px-2 
                     !py-1 
                     rounded-full 
@@ -140,9 +169,9 @@ export default function Experiencia() {
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

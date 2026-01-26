@@ -47,7 +47,7 @@ export default function EnviarMensaje() {
   };
 
   return (
-    <div className="nata-sans w-[100%] md:w-[50%] h-[33rem] md:h-[28rem] xl:h-[68vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]">
+    <div className="nata-sans w-[100%] md:w-[50%] h-[33rem] md:h-[28rem] xl:h-[70vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]">
       <div className="w-[90%] md:w-[88%]">
         <form
           onSubmit={handleSubmit(onSubmit)}

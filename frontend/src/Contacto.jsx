@@ -1,5 +1,6 @@
 import InformacionContacto from "./components/InformacionContacto";
 import EnviarMensaje from "./components/EnviarMensaje";
+import { LuPhone } from "react-icons/lu";
 
 export default function Contacto() {
   return (
@@ -7,11 +8,13 @@ export default function Contacto() {
       className="w-[90%] md:w-[65%] md:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-6 dark:text-white snap-start"
       id="contacto"
     >
-      <div className="flex flex-col justify-center">
-        <h1 className="!font-bold monospace !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
-          CONTACTO();
+      <div className="flex gap-2 items-center">
+        <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
+          <LuPhone className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
+        </div>
+        <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+          Contacto
         </h1>
-        <div className="w-27 h-[3px] bg-teal-500 rounded-md"></div>
       </div>
 
       <div className="flex flex-col md:flex-row w-full gap-8">

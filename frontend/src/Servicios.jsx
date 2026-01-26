@@ -3,6 +3,7 @@ import { FaCode } from "react-icons/fa6";
 import { CiServer } from "react-icons/ci";
 import { IoServerOutline } from "react-icons/io5";
 import { GrDeploy } from "react-icons/gr";
+import { RiCustomerServiceLine } from "react-icons/ri";
 
 const servicios = [
   {
@@ -55,14 +56,16 @@ export default function Servicios() {
      return (
         <>
           <div
-            className="snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0 items-center fira-code "
+            className="snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0  items-center"
             id="servicios"
           >
-            <div className="flex flex-col justify-center">
-              <h1 className="!font-bold monospace text-black dark:text-white !text-[1.3rem] lg:!text-[1.3rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
-                SERVICIOS();
+            <div className="flex gap-2 items-center">
+              <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
+              <RiCustomerServiceLine className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
+             </div>
+              <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+                Mis Servicios
               </h1>
-              <div className=" w-30 h-[3px] bg-teal-500 rounded-md"></div>
             </div>
     
             <div className="w-full min-h-[70vh] flex flex-col gap-8 justify-center items-center rounded-2xl !mt-6">
