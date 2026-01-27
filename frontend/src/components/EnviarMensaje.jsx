@@ -75,7 +75,7 @@ export default function EnviarMensaje() {
       className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]"
     >
       {isFormSubmitted ? (
-        <div className="w-[90%] md:w-[88%] flex flex-col gap-4 h-full justify-center items-center">
+        <div className="w-[90%] md:w-[88%] flex flex-col gap-4 h-full">
           {/* Header */}
           <div className="flex gap-3 items-center w-full">
             <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
@@ -86,10 +86,12 @@ export default function EnviarMensaje() {
             </span>
           </div>
 
-          {/* Mensage de exito!!! */}
-          <div
-            className="relative !p-4 rounded-lg !border-l-4 shadow-md transition-all duration-300 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 !border-teal-500 w-full"
-          >
+          {/* Contenedor para centrar mensaje y botón */}
+          <div className="flex-1 flex flex-col gap-4 justify-center items-center">
+            {/* Mensage de exito!!! */}
+            <div
+              className="relative !p-4 rounded-lg !border-l-4 shadow-md transition-all duration-300 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 !border-teal-500 w-full"
+            >
             <div className="flex items-start gap-3">
               <div
                 className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 bg-teal-500 text-white"
@@ -107,8 +109,8 @@ export default function EnviarMensaje() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium">{submitStatus.message}</p>
-                <p className="text-xs mt-1 opacity-80">
+                <p className="!text-sm lg:!text-base font-medium">{submitStatus.message}</p>
+                <p className="!text-xs lg:!text-sm mt-1 opacity-80">
                   Te responderé pronto. ¡Gracias por contactarme!
                 </p>
               </div>
@@ -121,6 +123,7 @@ export default function EnviarMensaje() {
           >
             Enviar otro mensaje
           </button>
+          </div>
         </div>
       ) : (
         <div className="w-[90%] md:w-[88%]">
