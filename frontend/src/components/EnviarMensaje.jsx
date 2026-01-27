@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { MdOutlineEmail } from "react-icons/md";
 
 export default function EnviarMensaje() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,14 +21,16 @@ export default function EnviarMensaje() {
     setSubmitStatus({ message: "", isError: false });
 
     try {
-     
-      const response = await fetch('https://backend-portafolio-beige.vercel.app/api/send-email', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://backend-portafolio-beige.vercel.app/api/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+      );
 
       if (!response.ok) throw new Error("Error al enviar el mensaje");
 
@@ -47,20 +50,25 @@ export default function EnviarMensaje() {
   };
 
   return (
-    <div className="nata-sans w-[100%] md:w-[50%] h-[33rem] md:h-[28rem] xl:h-[70vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]">
+    <div className="nata-sans w-[100%] md:w-[50%] h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]">
       <div className="w-[90%] md:w-[88%]">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6 flex flex-col gap-4"
+          className="space-y-6 flex flex-col gap-4 lg:gap-5"
         >
-          <span className="!text-sm text-center !font-semibold">
-            Enviame un mensaje
-          </span>
+          <div className="flex gap-3 items-center">
+            <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
+              <MdOutlineEmail className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
+            </div>
+            <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
+              Enviame un mensaje
+            </span>
+          </div>
           {/* Campo Nombre */}
           <div className="flex flex-col gap-1">
             <label
               htmlFor="nombre"
-              className="block text-sm font-medium mb-1 nata-sans  black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+              className="block font-medium mb-1 nata-sans  black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
               style={{ fontWeight: "600" }}
             >
               Nombre
@@ -90,7 +98,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="email"
-              className="block  mb-1 nata-sans black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
               style={{ fontWeight: "600" }}
             >
               Email
@@ -121,7 +129,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="email"
-              className="block  mb-1 nata-sans black:text-gray-200 !text-[0.75rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
               style={{ fontWeight: "600" }}
             >
               Asunto
@@ -155,7 +163,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="mensaje"
-              className="black:text-gray-200 nata-sans !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem]"
+              className="black:text-gray-200 nata-sans !text-xs lg:!text-sm 2xl:!text-md"
               style={{ fontWeight: "600" }}
             >
               Mensaje
@@ -230,9 +238,7 @@ export default function EnviarMensaje() {
                   )}
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium">
-                    {submitStatus.message}
-                  </p>
+                  <p className="text-sm font-medium">{submitStatus.message}</p>
                   {!submitStatus.isError && (
                     <p className="text-xs mt-1 opacity-80">
                       Te responderé pronto. ¡Gracias por contactarme!

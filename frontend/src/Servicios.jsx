@@ -56,7 +56,7 @@ export default function Servicios() {
      return (
         <>
           <div
-            className="snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0  items-center"
+            className="lg:snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0  items-center"
             id="servicios"
           >
             <div className="flex gap-2 items-center">
@@ -86,7 +86,7 @@ export default function Servicios() {
                     <div className="flex justify-center items-center !p-4  2xl:!p-6 rounded-full bg-gray-200 dark:bg-[#383838]">
                         {servicio.icono}
                     </div>
-                    <p className="!text-xs xl:!text-[1rem] text-center 2xl:!text-[1.3rem] text-black nata-sans dark:text-white !font-semibold">
+                    <p className="!text-sm xl:!text-lg text-center 2xl:!text-[1.3rem] text-black nata-sans dark:text-white !font-semibold">
                       {servicio.nombre}
                     </p>
                     <p className="!text-xs xl:!text-sm text-center 2xl:!text-[1.1rem] text-gray-700 nata-sans dark:text-gray-200">

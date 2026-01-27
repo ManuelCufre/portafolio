@@ -28,7 +28,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import useMode from "./hooks/useMode";
 
 const iconClass =
-  "!text-[3rem] lg:!text-[3rem] xl:!text-[4.2rem] 2xl:!text-[5.5rem]  ";
+  "!text-[3rem] lg:!text-[3rem] xl:!text-[4.7rem] 2xl:!text-[5.5rem]  ";
 
 const getIconColor = (nombre) => {
   const colorMap = {
@@ -145,7 +145,7 @@ export default function Habilidades() {
   return (
     <>
       <div
-        className="snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0 items-center fira-code "
+        className="lg:snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-4 md:gap-3 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0 items-center"
         id="habilidades"
       >
         <div className="flex gap-2 items-center">

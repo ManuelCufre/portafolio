@@ -8,11 +8,11 @@ const experiencias = [
     periodo: "Octubre 2023 – Abril 2025 (part-time)",
     tareas: [
       "Configurar usuarios, alcances y permisos en un sistema de gestión documental.",
-      "Configurar flujos de trabajo, plantillas de impresión y codificación de documentos.",
+      "Configurar flujos de trabajo, plantillas de impresión y codificación de documentos y formularios.",
       "Realizar pruebas para detección de errores.",
-      "Reportar incidencias y coordinar acciones con mesa de soporte.",
-      "Migración de documentos al sistema.",
-      "Soporte directo a usuarios.",
+      "Informar errores o realizar consultas a mesa de soporte y ejecutar las acciones propuestas por los mismos.",
+      "Realizar la migración de los documentos al sistema.",
+      "Brindar soporte a los usuarios.",
     ],
     habilidades: [
       "Microsoft Excel",
@@ -64,17 +64,17 @@ export default function Experiencia() {
         dark:hover:shadow-gray-700 
         dark:!border-[#383838]
       "
-       variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
     >
       {/* Header */}
       <div className="flex gap-3 items-center">
-        <div className="flex items-center justify-center !p-[0.65rem] dark:bg-[#383838] rounded-lg">
-          <IoBagOutline className="!text-[1.1rem] xl:!text-[1.3rem] 2xl:!text-[2rem] text-black dark:text-white" />
+        <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
+          <IoBagOutline className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
         </div>
-        <span className="nata-sans !text-[1.1rem] xl:!text-[1.3rem] 2xl:!text-[2rem] !font-semibold">
+         <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
           Experiencia laboral
         </span>
       </div>
@@ -94,11 +94,7 @@ export default function Experiencia() {
         />
 
         {experiencias.map((exp, index) => (
-          <motion.div
-            key={index}
-            className="relative flex flex-col !gap-2 "
-            
-          >
+          <motion.div key={index} className="relative flex flex-col !gap-2 ">
             {/* Punto */}
             <div
               className="
@@ -119,7 +115,7 @@ export default function Experiencia() {
               {exp.periodo}
             </span>
 
-            <span className="nata-sans !text-[1rem] xl:!text-[1.1rem] !font-semibold text-black dark:text-white">
+            <span className="nata-sans !text-sm xl:!text-[1.1rem] !font-semibold text-black dark:text-white">
               {exp.puesto}
             </span>
 

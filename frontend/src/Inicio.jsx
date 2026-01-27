@@ -59,7 +59,7 @@ export default function Inicio() {
             <motion.div className="flex flex-col" variants={itemVariants}>
               <motion.h2
                 variants={itemVariants}
-                className="!font-bold !text-[2rem] md:!text-[1.9rem] 2xl:!text-[3.2rem] text-gray-700 dark:text-white"
+                className="!font-bold !text-[1.8rem] lg:!text-[1.9rem] 2xl:!text-[3.2rem] text-gray-700 dark:text-white"
               >
                 Hola soy Manuel Cufré
               </motion.h2>

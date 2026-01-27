@@ -5,7 +5,7 @@ import { LuPhone } from "react-icons/lu";
 export default function Contacto() {
   return (
     <div
-      className="w-[90%] md:w-[65%] md:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-6 dark:text-white snap-start"
+      className="w-[90%] md:w-[65%] lg:!pt-4 md:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-5 dark:text-white lg:snap-start"
       id="contacto"
     >
       <div className="flex gap-2 items-center">
@@ -17,7 +17,7 @@ export default function Contacto() {
         </h1>
       </div>
 
-      <div className="flex flex-col md:flex-row w-full gap-8">
+      <div className="flex flex-col md:flex-row w-full gap-8 items-center">
         <InformacionContacto />
         <EnviarMensaje />
       </div>

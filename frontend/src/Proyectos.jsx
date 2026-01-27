@@ -55,7 +55,7 @@ export default function Proyectos() {
   const proyectos = [
     {
       id: 1,
-      titulo: "Sistema de gestion de stock",
+      titulo: "Sistema de gestión para un polirrubro",
       descripción:
         "Sistema completo de gestión de inventario y stock desarrollado con React.js y Express.js. Permite la gestión total de productos, categorías, proveedores y movimientos de stock. Incluye funcionalidades de búsqueda avanzada, reportes de inventario y un dashboard intuitivo para el seguimiento en tiempo real del estado del negocio.",
       imagen: gestion2,
@@ -206,7 +206,7 @@ export default function Proyectos() {
   return (
     <>
       <div
-        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 snap-start"
+        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 lg:snap-start"
         id="proyectos"
       >
         <div className="flex gap-2 items-center">
@@ -234,18 +234,17 @@ export default function Proyectos() {
             >
               <Image
                 src={proyecto.imagen}
-                height="90%"
-                className="w-[90%] md:w-[46%] relative top-4 md:top-0"
+                className="w-[90%] h-[75%] lg:h-[90%] md:w-[46%] relative top-4 md:top-0"
                 alt=""
                 borderRadius="2xl"
                 onClick={() => abrirVisor(proyecto.imagenes, 0)}
                 cursor="pointer"
               />
               <div className="flex flex-col justify-center gap-1 lg:gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] !pt-2 md:!pt-0">
-                <h2 className="!font-semibold nata-sans dark:text-white !text-[0.7rem] lg:!text-[1rem] xl:!text-[1.25rem] 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem]">
+                <h2 className="!font-semibold nata-sans dark:text-white !text-sm lg:!text-md xl:!text-lg 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem]">
                   {proyecto.titulo}
                 </h2>
-                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-[0.6rem] lg:!text-[0.6rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">
+                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-xs xl:!text-sm 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">
                   {proyecto.descripción}
                 </span>
                 <div className="flex gap-2 !pt-2 md:!pt-0">

@@ -1,7 +1,6 @@
 import { PiGraduationCap } from "react-icons/pi";
 import { motion } from "framer-motion";
 
-
 const educacion = [
   {
     nombre: "Tecnicatura Superior en Analista de Sistemas",
@@ -9,14 +8,7 @@ const educacion = [
     periodo: "2022 - 2025 (Graduado)",
     descripcion:
       "Estudio de tecnologías de desarrollo de software, bases de datos y redes. Formación en programación, análisis de sistemas y gestión de proyectos informáticos.",
-    habilidades: [
-      "Java",
-      "Python",
-      "JavaScript",
-      "React",
-      "HTML",
-      "CSS",
-    ],
+    habilidades: ["Java", "Python", "JavaScript", "React", "HTML", "CSS"],
   },
   {
     nombre: "Academia de Desarrollo Tecnológico",
@@ -26,7 +18,6 @@ const educacion = [
       "Formación en tecnologías aplicadas al desarrollo y administración de sistemas.",
     habilidades: ["Python", "MySQL", "Redes", "Windows Server", "Genexus"],
   },
-
 ];
 
 const containerVariants = {
@@ -70,24 +61,23 @@ export default function Formacion() {
         dark:hover:shadow-gray-700 
         dark:!border-[#383838]
       "
-       variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
     >
       {/* Header */}
       <div className="flex gap-3 items-center">
-             <div className="flex items-center justify-center !p-[0.65rem] dark:bg-[#383838] rounded-lg">
-               <PiGraduationCap className="!text-[1.1rem] xl:!text-[1.3rem] 2xl:!text-[2rem] text-black dark:text-white" />
-             </div>
-             <span className="nata-sans !text-[1.1rem] xl:!text-[1.3rem] 2xl:!text-[2rem] !font-semibold">
-               Formación Académica
-             </span>
-           </div>
+        <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
+          <PiGraduationCap className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
+        </div>
+         <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
+          Formación académica
+        </span>
+      </div>
 
       {/* Timeline */}
-      <div className="relative !pl-6 flex flex-col !gap-10">
-
+      <div className="relative !pl-6 flex flex-col !gap-6 lg:!gap-10">
         {/* Línea vertical */}
         <div
           className="
@@ -98,13 +88,10 @@ export default function Formacion() {
             !w-[1px] 
             !bg-gray-500
           "
-         
         />
 
         {educacion.map((item, index) => (
-          <motion.div key={index} className="relative flex flex-col !gap-2" 
-         >
-
+          <motion.div key={index} className="relative flex flex-col !gap-2">
             {/* Punto */}
             <div
               className="
@@ -125,7 +112,7 @@ export default function Formacion() {
               {item.periodo}
             </span>
 
-            <span className="nata-sans !text-[1rem] xl:!text-[1rem] !font-semibold text-black dark:text-white">
+            <span className="nata-sans !text-sm xl:!text-[1rem] !font-semibold text-black dark:text-white">
               {item.nombre}
             </span>
 
@@ -160,7 +147,6 @@ export default function Formacion() {
                 </span>
               ))}
             </div>
-
           </motion.div>
         ))}
       </div>
