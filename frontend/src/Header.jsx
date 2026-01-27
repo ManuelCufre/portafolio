@@ -5,6 +5,16 @@ import { HiMenu } from "react-icons/hi";
 import { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import useMode from "./hooks/useMode";
+
+const secciones = [
+  { nombre: "Inicio", enlace: "#inicio" },
+  { nombre: "Proyectos", enlace: "#proyectos" },
+  { nombre: "Servicios", enlace: "#servicios" },
+  { nombre: "Trayectoria", enlace: "#trayectoria" },
+  { nombre: "Habilidades", enlace: "#habilidades" },
+  { nombre: "Contacto", enlace: "#contacto" },
+]
+
 export default function Header() {
   const { modo, setModo, handleModo } = useMode();
 
@@ -14,7 +24,7 @@ export default function Header() {
         <div className="flex justify-center items-center gap-2 relative left-4">
           <FaCode className="text-teal-400" />
           <h2
-            className="text-l font-bold nata-sans !text-[0.7rem] md:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]"
+            className="text-l font-bold nata-sans !text-xs 2xl:!text-sm"
             style={{ fontSize: "0.9rem" }}
           >
             Manuel Agustín Cufré
@@ -22,105 +32,24 @@ export default function Header() {
         </div>
         <nav>
           <ul
-            className="hidden sm:flex gap-8 items-center relative right-4 nata-sans  sm:!text-[0.8rem] 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]"
+            className="hidden sm:flex gap-8 items-center relative right-4 nata-sans !text-xs 2xl:!text-sm"
           >
-            {/* Inicio */}
-            <li className="group relative">
-              <a
-                href="#inicio"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Inicio
-              </a>
-              <div
-                className="
+            {secciones.map((seccion) => (
+              <li key={seccion.nombre} className="group relative">
+                <a
+                  href={seccion.enlace}
+                  className="hover:text-teal-400 transition-colors"
+                >
+                  {seccion.nombre}
+                </a>
+                <div
+                  className="
       absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
       w-0 group-hover:w-full transition-all duration-300
     "
               ></div>
             </li>
-            
-            {/* Proyectos */}
-            <li className="group relative">
-              <a
-                href="#proyectos"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Proyectos
-              </a>
-              <div
-                className="
-      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
-      w-0 group-hover:w-full transition-all duration-300
-    "
-              ></div>
-            </li>
-
-             {/* Servicios */}
-            <li className="group relative">
-              <a
-                href="#servicios"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Servicios
-              </a>
-              <div
-                className="
-      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
-      w-0 group-hover:w-full transition-all duration-300
-    "
-              ></div>
-            </li>
-
-            {/* Trayectoria */}
-            <li className="group relative">
-              <a
-                href="#trayectoria"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Trayectoria
-              </a>
-              <div
-                className="
-      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
-      w-0 group-hover:w-full transition-all duration-300
-    "
-              ></div>
-            </li>
-
-            {/* Habilidades */}
-            <li className="group relative">
-              <a
-                href="#habilidades"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Habilidades
-              </a>
-              <div
-                className="
-      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
-      w-0 group-hover:w-full transition-all duration-300
-    "
-              ></div>
-            </li>
-
-          
-
-            {/* Contacto */}
-            <li className="group relative">
-              <a
-                href="#contacto"
-                className="hover:text-teal-400 transition-colors"
-              >
-                Contacto
-              </a>
-              <div
-                className="
-      absolute bottom-0 left-0 h-[2px] bg-teal-500 rounded-md 
-      w-0 group-hover:w-full transition-all duration-300
-    "
-              ></div>
-            </li>
+            ))}
 
             {/* Botón de modo oscuro/claro (sin subrayado) */}
             <li>

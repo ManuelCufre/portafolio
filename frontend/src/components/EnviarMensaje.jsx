@@ -2,12 +2,23 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
 export default function EnviarMensaje() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
     message: "",
     isError: false,
   });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const {
     register,
@@ -38,6 +49,7 @@ export default function EnviarMensaje() {
         message: "¡Mensaje enviado con éxito!",
         isError: false,
       });
+      setIsFormSubmitted(true);
       reset();
     } catch (error) {
       setSubmitStatus({
@@ -49,13 +61,73 @@ export default function EnviarMensaje() {
     }
   };
 
+  const handleSendAnotherMessage = () => {
+    setIsFormSubmitted(false);
+    setSubmitStatus({ message: "", isError: false });
+  };
+
   return (
-    <div className="nata-sans w-[100%] md:w-[50%] h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]">
-      <div className="w-[90%] md:w-[88%]">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6 flex flex-col gap-4 lg:gap-5"
-        >
+    <div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]"
+    >
+      {isFormSubmitted ? (
+        <div className="w-[90%] md:w-[88%] flex flex-col gap-4 h-full justify-center items-center">
+          {/* Header */}
+          <div className="flex gap-3 items-center w-full">
+            <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
+              <MdOutlineEmail className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
+            </div>
+            <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
+              Enviame un mensaje
+            </span>
+          </div>
+
+          {/* Mensage de exito!!! */}
+          <div
+            className="relative !p-4 rounded-lg !border-l-4 shadow-md transition-all duration-300 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 !border-teal-500 w-full"
+          >
+            <div className="flex items-start gap-3">
+              <div
+                className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 bg-teal-500 text-white"
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-medium">{submitStatus.message}</p>
+                <p className="text-xs mt-1 opacity-80">
+                  Te responderé pronto. ¡Gracias por contactarme!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={handleSendAnotherMessage}
+            className="!py-1.5 xl:!py-2 w-full !text-[0.7rem] lg:!text-xs 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.75rem] self-center cursor-pointer !text-black !bg-teal-500 hover:bg-teal-400 font-medium rounded-md shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+          >
+            Enviar otro mensaje
+          </button>
+        </div>
+      ) : (
+        <div className="w-[90%] md:w-[88%]">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6 flex flex-col gap-4 lg:gap-5"
+          >
           <div className="flex gap-3 items-center">
             <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
               <MdOutlineEmail className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
@@ -194,62 +266,6 @@ export default function EnviarMensaje() {
             )}
           </div>
 
-          {/* Mensaje de estado del envío */}
-          {submitStatus.message && (
-            <div
-              className={`relative !p-4 rounded-lg !border-l-4 shadow-md transition-all duration-300 ${
-                submitStatus.isError
-                  ? "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 border-red-500"
-                  : "bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 !border-teal-500"
-              }`}
-            >
-              <div className="flex items-start gap-3">
-                <div
-                  className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
-                    submitStatus.isError
-                      ? "bg-red-500 text-white"
-                      : "bg-teal-500 text-white"
-                  }`}
-                >
-                  {submitStatus.isError ? (
-                    <svg
-                      className="w-3 h-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      className="w-3 h-3"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm font-medium">{submitStatus.message}</p>
-                  {!submitStatus.isError && (
-                    <p className="text-xs mt-1 opacity-80">
-                      Te responderé pronto. ¡Gracias por contactarme!
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Botón de Envío */}
           <button
             type="submit"
             disabled={isSubmitting}
@@ -259,8 +275,9 @@ export default function EnviarMensaje() {
           >
             {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
           </button>
-        </form>
-      </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 }

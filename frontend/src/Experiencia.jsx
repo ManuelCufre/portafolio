@@ -74,7 +74,7 @@ export default function Experiencia() {
         <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
           <IoBagOutline className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
         </div>
-         <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
+         <span className="nata-sans !text-md xl:!text-lg 2xl:!text-2xl !font-semibold">
           Experiencia laboral
         </span>
       </div>
@@ -111,15 +111,15 @@ export default function Experiencia() {
               "
             />
 
-            <span className="monospace !text-[0.75rem] lg:!text-[0.85rem] !text-gray-500 dark:!text-gray-400">
+            <span className="monospace !text-[0.75rem] lg:!text-[0.85rem] 2xl:!text-lg !text-gray-500 dark:!text-gray-400">
               {exp.periodo}
             </span>
 
-            <span className="nata-sans !text-sm xl:!text-[1.1rem] !font-semibold text-black dark:text-white">
+            <span className="nata-sans !text-sm xl:!text-[1.1rem] 2xl:!text-2xl !font-semibold text-black dark:text-white">
               {exp.puesto}
             </span>
 
-            <span className="nata-sans !text-[0.85rem] !font-medium text-black dark:text-white">
+            <span className="nata-sans !text-[0.85rem] 2xl:!text-xl !font-medium text-black dark:text-white">
               {exp.empresa}
             </span>
 
@@ -134,7 +134,7 @@ export default function Experiencia() {
                 nata-sans 
                 !text-[0.75rem] 
                 xl:!text-[0.8rem] 
-                2xl:!text-[0.95rem]
+                2xl:!text-base
               "
             >
               {exp.tareas.map((tarea, i) => (
@@ -154,11 +154,17 @@ export default function Experiencia() {
                     dark:text-white 
                     !text-[0.6rem] 
                     lg:!text-[0.7rem] 
+                    2xl:!text-sm
                     !px-2 
                     !py-1 
+                    2xl:!px-3 
                     rounded-full 
                     !mt-1 
                     !mr-1
+                    2xl:!mt-2
+                    2xl:!mr-2
+
+
                   "
                 >
                   {hab}

@@ -28,7 +28,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import useMode from "./hooks/useMode";
 
 const iconClass =
-  "!text-[3rem] lg:!text-[3rem] xl:!text-[4.7rem] 2xl:!text-[5.5rem]  ";
+  "!text-[3rem] lg:!text-[3rem] xl:!text-[4.7rem] 2xl:!text-[5.8rem]  ";
 
 const getIconColor = (nombre) => {
   const colorMap = {
@@ -173,7 +173,7 @@ export default function Habilidades() {
                 className="flex flex-col items-center gap-3 bg-[#F2F2F2] dark:bg-[#242424] !rounded-sm !py-4 !px-12 xl:!py-6 xl:!px-16 2xl:!py-10 2xl:!px-20 !border-1 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
               >
                 {tech.icono}
-                <p className="!text-xs 2xl:!text-md text-black monospace dark:text-white">
+                <p className="!text-xs 2xl:!text-sm text-black monospace dark:text-white">
                   {tech.nombre}
                 </p>
               </motion.div>

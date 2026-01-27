@@ -211,9 +211,9 @@ export default function Proyectos() {
       >
         <div className="flex gap-2 items-center">
           <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
-            <GrProjects className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
+            <GrProjects className="!text-lg lg:!text-xl 2xl:!text-2xl text-teal-500" />
           </div>
-          <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+          <h1 className="!font-bold nata-sans text-black dark:text-white !text-xl lg:!text-2xl 2xl:!text-3xl">
             Mis Proyectos
           </h1>
         </div>
@@ -241,10 +241,10 @@ export default function Proyectos() {
                 cursor="pointer"
               />
               <div className="flex flex-col justify-center gap-1 lg:gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] !pt-2 md:!pt-0">
-                <h2 className="!font-semibold nata-sans dark:text-white !text-sm lg:!text-md xl:!text-lg 2xl:!text-[1.5rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.1rem]">
+                <h2 className="!font-semibold nata-sans dark:text-white !text-sm lg:!text-md xl:!text-lg 2xl:!text-2xl">
                   {proyecto.titulo}
                 </h2>
-                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-xs xl:!text-sm 2xl:!text-[0.9rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.8rem]">
+                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-xs xl:!text-sm 2xl:!text-base">
                   {proyecto.descripción}
                 </span>
                 <div className="flex gap-2 !pt-2 md:!pt-0">

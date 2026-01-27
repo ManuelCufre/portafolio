@@ -4,9 +4,22 @@ import { FiGithub } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
 export default function InformacionContacto() {
   return (
-    <div className=" w-[100%] md:w-[50%] h-[31rem] lg:h-[33rem] nata-sans md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] !py-5 !px-2 lg:!p-6 flex flex-col gap-2 lg:gap-4 2xl:gap-10 justify-start rounded-md items-start !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040] p-6 md:p-8">
+    <div  variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }} className=" w-[100%] md:w-[50%] h-[31rem] lg:h-[33rem] nata-sans md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] !py-5 !px-2 lg:!p-6 flex flex-col gap-2 lg:gap-4 2xl:gap-10 justify-start rounded-md items-start !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040] p-6 md:p-8">
       {/* Título */}
       <div className="w-full flex flex-col gap-4">
         <div className="flex gap-3 items-center">
