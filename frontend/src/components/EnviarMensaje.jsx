@@ -72,12 +72,12 @@ export default function EnviarMensaje() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-around rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040]"
+      className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-start rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040] !pt-6"
     >
       {isFormSubmitted ? (
         <div className="w-[90%] md:w-[88%] flex flex-col gap-4 h-full">
           {/* Header */}
-          <div className="flex gap-3 items-center w-full">
+          <div className="flex gap-3 items-center w-full !mb-4">
             <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
               <MdOutlineEmail className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
             </div>
