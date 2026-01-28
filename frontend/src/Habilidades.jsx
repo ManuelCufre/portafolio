@@ -178,7 +178,7 @@ export default function Habilidades() {
   return (
     <>
       <div
-        className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 lg:snap-start "
+        className="w-[90%] md:w-[65%] min-h-auto md:min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 md:snap-start !py-16 md:!py-0"
         id="habilidades"
       >
         <div className="flex gap-2 items-center">

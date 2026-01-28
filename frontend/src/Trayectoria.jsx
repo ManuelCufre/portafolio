@@ -5,7 +5,7 @@ import { PiPath } from "react-icons/pi";
 export default function Trayectoria() {
   return (
     <div
-      className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 dark:text-white lg:snap-start"
+      className="w-[90%] md:w-[65%] min-h-auto md:min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 dark:text-white md:snap-start !py-16 md:!py-0"
       id="trayectoria"
     >
       <div className="flex gap-2 items-center">

@@ -47,14 +47,14 @@ export default function Inicio() {
 
   return (
     <div
-      className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col justify-center items-center gap-6 fira-code  md:snap-start"
+      className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col justify-center items-center gap-6 fira-code md:snap-start !py-16 md:!py-0"
       id="inicio"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full flex flex-col gap-6 justify-center items-center lg:!mt-28 rounded-2xl bg-[#FAFAFA] dark:bg-[#1E1E1F]"
+        className="w-full flex flex-col gap-6 justify-center !mt-26 md:!mt-0 items-center lg:!mt-28 rounded-2xl bg-[#FAFAFA] dark:bg-[#1E1E1F]"
       >
         <div className="flex gap-8 items-center nata-sans w-full">
           <div className="w-[100%]">
@@ -90,9 +90,9 @@ export default function Inicio() {
             {/* ICONOS + BOTONES */}
             <motion.div
               variants={itemVariants}
-              className="w-[%100] h-40 flex items-center justify-center"
+              className="w-full flex items-center justify-center !mt-16"
             >
-              <div className="flex gap-2 2xl:gap-3 w-[34%] justify-center items-center">
+              <div className="flex gap-2 md:gap-3 2xl:gap-3 w-full md:w-auto justify-center items-center flex-wrap">
                 
 
 

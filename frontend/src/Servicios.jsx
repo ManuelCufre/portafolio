@@ -56,7 +56,7 @@ export default function Servicios() {
      return (
         <>
           <div
-            className="lg:snap-start w-[90%] md:w-[65%] min-h-[100vh] flex flex-col justify-center items-center gap-6 md:gap-6"
+            className="w-[90%] md:w-[65%] min-h-auto md:min-h-[100vh] flex flex-col justify-center items-center gap-6 md:gap-6 md:snap-start !py-16 md:!py-0"
             id="servicios"
           >
             <div className="flex gap-2 items-center">

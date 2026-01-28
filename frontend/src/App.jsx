@@ -23,7 +23,7 @@ function App() {
           h-screen
           overflow-y-scroll
           scroll-smooth
-          snap-y snap-proximity
+          md:snap-y md:snap-proximity
           flex flex-col items-center
           bg-[#FAFAFA] dark:bg-[#1E1E1F]
         "
