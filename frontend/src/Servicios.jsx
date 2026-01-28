@@ -56,21 +56,21 @@ export default function Servicios() {
      return (
         <>
           <div
-            className="lg:snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-3 md:gap-0 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0  items-center"
+            className="lg:snap-start w-[90%] md:w-[65%] min-h-[100vh] flex flex-col justify-center items-center gap-6 md:gap-6"
             id="servicios"
           >
             <div className="flex gap-2 items-center">
               <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
               <RiCustomerServiceLine className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
              </div>
-              <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+              <h1 className="!font-bold nata-sans text-black dark:text-white !text-xl lg:!text-2xl 2xl:!text-3xl">
                 Mis Servicios
               </h1>
             </div>
     
-            <div className="w-full min-h-[70vh] flex flex-col gap-8 justify-center items-center rounded-2xl !mt-6">
+            <div className="w-full flex flex-col gap-8 justify-center items-center rounded-2xl">
               <motion.div
-                className="grid grid-cols-1 xl:grid-cols-2 gap-4 justify-center w-full h-full"
+                className="grid grid-cols-1 xl:grid-cols-2 gap-6 justify-center w-full h-full"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="show"
@@ -86,10 +86,10 @@ export default function Servicios() {
                     <div className="flex justify-center items-center !p-4  2xl:!p-6 rounded-full bg-gray-200 dark:bg-[#383838]">
                         {servicio.icono}
                     </div>
-                    <p className="!text-sm xl:!text-lg text-center 2xl:!text-[1.3rem] text-black nata-sans dark:text-white !font-semibold">
+                    <p className="!text-sm xl:!text-lg text-center 2xl:!text-xl text-black nata-sans dark:text-white !font-semibold">
                       {servicio.nombre}
                     </p>
-                    <p className="!text-xs xl:!text-sm text-center 2xl:!text-[1.1rem] text-gray-700 nata-sans dark:text-gray-200">
+                    <p className="!text-xs xl:!text-sm text-center 2xl:!text-base text-gray-700 nata-sans dark:text-gray-200">
                       {servicio.descripcion}
                     </p>
                   </motion.div>

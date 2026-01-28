@@ -72,7 +72,7 @@ export default function EnviarMensaje() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] xl:h-[73vh] 2xl:min-h-[70vh] flex flex-col justify-start rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040] !pt-6"
+      className="nata-sans w-[100%] md:w-[50%] min-h-[33rem] md:h-[28rem] lg:h-[73vh] 2xl:h-[68vh] flex flex-col justify-start rounded-md items-center !border-1 !border-gray-300 bg-[#F2F2F2] dark:bg-[#242424] hover:shadow-sm dark:hover:shadow-gray-700 dark:!border-[#383838] dark:hover:!border-[#404040] !pt-6"
     >
       {isFormSubmitted ? (
         <div className="w-[90%] md:w-[88%] flex flex-col gap-4 h-full">
@@ -81,7 +81,7 @@ export default function EnviarMensaje() {
             <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
               <MdOutlineEmail className="!text-[1rem] xl:!text-[1.15rem] 2xl:!text-[1.7rem] text-black dark:text-white" />
             </div>
-            <span className="nata-sans !text-md xl:!text-lg 2xl:!text-xl !font-semibold">
+            <span className="nata-sans !text-md xl:!text-lg 2xl:!text-2xl !font-semibold">
               Enviame un mensaje
             </span>
           </div>
@@ -109,8 +109,8 @@ export default function EnviarMensaje() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="!text-sm lg:!text-base font-medium">{submitStatus.message}</p>
-                <p className="!text-xs lg:!text-sm mt-1 opacity-80">
+                <p className="!text-sm lg:!text-base 2xl:!text-[1.15rem] font-medium">{submitStatus.message}</p>
+                <p className="!text-xs lg:!text-sm 2xl:!text-[0.9rem] mt-1 opacity-80">
                   Te responderé pronto. ¡Gracias por contactarme!
                 </p>
               </div>
@@ -129,7 +129,7 @@ export default function EnviarMensaje() {
         <div className="w-[90%] md:w-[88%]">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-6 flex flex-col gap-4 lg:gap-5"
+            className="space-y-6 flex flex-col gap-4 lg:gap-5 2xl:gap-6"
           >
           <div className="flex gap-3 items-center">
             <div className="flex items-center justify-center !p-[0.6rem] dark:bg-[#383838] rounded-lg">
@@ -143,7 +143,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="nombre"
-              className="block font-medium mb-1 nata-sans  black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
+              className="block font-medium mb-1 nata-sans  black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-base"
               style={{ fontWeight: "600" }}
             >
               Nombre
@@ -173,7 +173,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="email"
-              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
+              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-base"
               style={{ fontWeight: "600" }}
             >
               Email
@@ -204,7 +204,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="email"
-              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-md"
+              className="block  mb-1 nata-sans black:text-gray-200 !text-xs lg:!text-sm 2xl:!text-base"
               style={{ fontWeight: "600" }}
             >
               Asunto
@@ -238,7 +238,7 @@ export default function EnviarMensaje() {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="mensaje"
-              className="black:text-gray-200 nata-sans !text-xs lg:!text-sm 2xl:!text-md"
+              className="black:text-gray-200 nata-sans !text-xs lg:!text-sm 2xl:!text-base"
               style={{ fontWeight: "600" }}
             >
               Mensaje
@@ -257,7 +257,7 @@ export default function EnviarMensaje() {
                 },
               })}
               rows="4"
-              className="w-full rounded-md lg:h-20 2xl:h-26 [@media(min-width:1536px)_and_(max-width:1919px)]:h-10 !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem] bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-[#383838] lg:rounded-md 2xl:rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+              className="w-full rounded-md lg:h-20 2xl:!h-26  bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-[#383838] lg:rounded-md 2xl:rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
               placeholder="Escribe tu mensaje aquí..."
               style={{ padding: "0.8rem", resize: "none" }}
               autoComplete="off"

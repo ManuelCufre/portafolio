@@ -206,7 +206,7 @@ export default function Proyectos() {
   return (
     <>
       <div
-        className="w-[90%] md:w-[65%] min-h-[70rem] sm:min-h-[100vh] flex flex-col items-center justify-center gap-3 md:gap-4 lg:snap-start"
+        className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 lg:snap-start"
         id="proyectos"
       >
         <div className="flex gap-2 items-center">
@@ -240,11 +240,11 @@ export default function Proyectos() {
                 onClick={() => abrirVisor(proyecto.imagenes, 0)}
                 cursor="pointer"
               />
-              <div className="flex flex-col justify-center gap-1 lg:gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] !pt-2 md:!pt-0">
+              <div className="flex flex-col justify-center gap-1 lg:gap-2 md:justify-between w-[90%] md:w-[48%] h-[90%] !pt-2 md:!pt-0 2xl:!py-4">
                 <h2 className="!font-semibold nata-sans dark:text-white !text-sm lg:!text-md xl:!text-lg 2xl:!text-2xl">
                   {proyecto.titulo}
                 </h2>
-                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-xs xl:!text-sm 2xl:!text-base">
+                <span className="nata-sans text-gray-700 dark:text-gray-200 !text-xs xl:!text-sm 2xl:!text-[0.95rem]">
                   {proyecto.descripción}
                 </span>
                 <div className="flex gap-2 !pt-2 md:!pt-0">

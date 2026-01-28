@@ -11,7 +11,6 @@ import { FaBootstrap } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa6";
 import { FaDatabase } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
-import { DiNodejs } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
 import { PiUserCircleLight } from "react-icons/pi";
 import { IoBagOutline } from "react-icons/io5";
@@ -24,11 +23,16 @@ import { DiPostgresql } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
 import { DiJavascript } from "react-icons/di";
 import { IoLogoVercel } from "react-icons/io5";
+import { FaWindows } from "react-icons/fa";
+import { PiNetworkLight } from "react-icons/pi";
+import { SiChakraui } from "react-icons/si";
+import { GrVmware } from "react-icons/gr";
+import { VscAzure } from "react-icons/vsc";
 
 import useMode from "./hooks/useMode";
 
 const iconClass =
-  "!text-[3rem] lg:!text-[3rem] xl:!text-[4.7rem] 2xl:!text-[5.8rem]  ";
+  "!text-[3rem] lg:!text-[3rem] xl:!text-[3.7rem] 2xl:!text-[5rem]  ";
 
 const getIconColor = (nombre) => {
   const colorMap = {
@@ -71,6 +75,11 @@ const categoriasTecnologias = [
   {
     nombre: "Tailwind",
     icono: <RiTailwindCssFill className={`${iconClass} text-cyan-400`} />,
+  },
+
+   {
+    nombre: "Chakra",
+    icono: <SiChakraui className={`${iconClass} text-teal-500`} />,
   },
 
   {
@@ -117,7 +126,31 @@ const categoriasTecnologias = [
   {
     nombre: "Vercel",
     icono: (
-      <IoLogoVercel className={`${iconClass} text-black dark:text-white`} />
+      <IoLogoVercel className={`${iconClass} text-gray-800 dark:text-white`} />
+    ),
+  },
+  {
+    nombre: "WindowsServer",
+    icono: (
+      <FaWindows className={`${iconClass} text-blue-600 dark:text-blue-400`} />
+    ),
+  },
+  {
+    nombre: "Redes",
+    icono: (
+      <PiNetworkLight className={`${iconClass} text-purple-600 dark:text-purple-400`} />
+    ),
+  },
+  {
+    nombre: "Virtualización",
+    icono: (
+      <GrVmware className={`${iconClass} text-orange-600 dark:text-orange-400`} />
+    ),
+  },
+  {
+    nombre: "Azure",
+    icono: (
+      <VscAzure className={`${iconClass} text-blue-600 dark:text-blue-400`} />
     ),
   },
 ];
@@ -145,14 +178,14 @@ export default function Habilidades() {
   return (
     <>
       <div
-        className="lg:snap-start w-[90%] md:w-[65%] min-h-[62rem] sm:min-h-[100vh] flex flex-col justify-center gap-4 md:gap-3 [@media(min-width:1536px)_and_(max-width:1919px)]:gap-0 items-center"
+        className="w-[90%] md:w-[65%] min-h-[100vh] flex flex-col items-center justify-center gap-6 md:gap-6 lg:snap-start "
         id="habilidades"
       >
         <div className="flex gap-2 items-center">
           <div className="flex items-center justify-center !p-[0.60rem] bg-[#F2F2F2] !border-sm !border-[#E3E3E3] dark:!border-[#4A4A4A] dark:bg-[#383838] rounded-lg">
             <FaCode className="!text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] text-teal-500" />
           </div>
-          <h1 className="!font-bold nata-sans text-black dark:text-white !text-[1.3rem] lg:!text-[1.5rem] 2xl:!text-[1.7rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[1.25rem]">
+          <h1 className="!font-bold nata-sans text-black dark:text-white !text-xl lg:!text-2xl 2xl:!text-3xl">
             Mis Habilidades
           </h1>
         </div>
@@ -170,7 +203,7 @@ export default function Habilidades() {
                 key={tech.nombre}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="flex flex-col items-center gap-3 bg-[#F2F2F2] dark:bg-[#242424] !rounded-sm !py-4 !px-12 xl:!py-6 xl:!px-16 2xl:!py-10 2xl:!px-20 !border-1 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
+                className="flex flex-col items-center gap-3 bg-[#F2F2F2] dark:bg-[#242424] !rounded-sm !py-4 !px-12 xl:!py-4 xl:!px-16 2xl:!py-6 2xl:!px-20 !border-1 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
               >
                 {tech.icono}
                 <p className="!text-xs 2xl:!text-sm text-black monospace dark:text-white">

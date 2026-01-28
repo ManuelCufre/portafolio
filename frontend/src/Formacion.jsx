@@ -37,7 +37,7 @@ export default function Formacion() {
         w-full 
         md:h-[28rem] 
         xl:h-[68vh] 
-        2xl:min-h-[70vh] 
+        2xl:h-[64vh] 
         flex 
         flex-col 
         gap-6 
@@ -82,7 +82,7 @@ export default function Formacion() {
         />
 
         {educacion.map((item, index) => (
-          <motion.div key={index} className="relative flex flex-col !gap-2">
+          <motion.div key={index} className="relative flex flex-col !gap-2 2xl:!gap-3">
             {/* Punto */}
             <div
               className="
@@ -103,15 +103,15 @@ export default function Formacion() {
               {item.periodo}
             </span>
 
-            <span className="nata-sans !text-sm xl:!text-[1rem] 2xl:!text-2xl !font-semibold text-black dark:text-white">
+            <span className="nata-sans !text-sm xl:!text-[1rem] 2xl:!text-xl !font-semibold text-black dark:text-white">
               {item.nombre}
             </span>
 
-            <span className="nata-sans !text-[0.8rem] 2xl:!text-xl !font-medium text-black dark:text-white">
+            <span className="nata-sans !text-[0.8rem] 2xl:!text-[0.95rem] !font-medium text-black dark:text-white">
               {item.institucion}
             </span>
 
-            <p className="nata-sans text-gray-700 dark:text-gray-300 !text-[0.75rem] xl:!text-[0.8rem] 2xl:!text-base">
+            <p className="nata-sans text-gray-700 dark:text-gray-300 !text-[0.75rem] xl:!text-[0.8rem] 2xl:!text-[0.9rem]">
               {item.descripcion}
             </p>
 
@@ -126,8 +126,8 @@ export default function Formacion() {
                     text-black 
                     dark:text-white 
                     !text-[0.6rem] 
-                    lg:!text-[0.7rem] 
-                    2xl:!text-sm
+                    xl:!text-[0.7rem] 
+                    2xl:!text-[0.8rem]
                     !px-2 
                     !py-1 
                     2xl:!px-3 
