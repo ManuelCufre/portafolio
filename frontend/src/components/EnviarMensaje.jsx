@@ -257,7 +257,7 @@ export default function EnviarMensaje() {
                 },
               })}
               rows="4"
-              className="w-full rounded-md lg:h-20 2xl:!h-26  bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-[#383838] lg:rounded-md 2xl:rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+              className="w-full rounded-md lg:h-20 2xl:!h-26 !text-[0.75rem] lg:!text-[0.75rem] 2xl:!text-[1rem] [@media(min-width:1536px)_and_(max-width:1919px)]:!text-[0.85rem]  bg-[#FAFAFA] !border-1 !border-gray-300 dark:bg-[#1E1E1F] dark:!border-[#383838] lg:rounded-md 2xl:rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
               placeholder="Escribe tu mensaje aquí..."
               style={{ padding: "0.8rem", resize: "none" }}
               autoComplete="off"

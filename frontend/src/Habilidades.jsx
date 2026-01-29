@@ -203,7 +203,7 @@ export default function Habilidades() {
                 key={tech.nombre}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className="flex flex-col items-center gap-3 bg-[#F2F2F2] dark:bg-[#242424] !rounded-sm !py-4 !px-12 xl:!py-4 xl:!px-16 2xl:!py-6 2xl:!px-20 !border-1 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
+                className="flex flex-col items-center gap-3 bg-[#F2F2F2] dark:bg-[#242424] !rounded-sm !py-4 !px-12 xl:!py-4 xl:!px-16 2xl:!py-6 2xl:!px-20 !border-1 !border-gray-300 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
               >
                 {tech.icono}
                 <p className="!text-xs 2xl:!text-sm text-black monospace dark:text-white">

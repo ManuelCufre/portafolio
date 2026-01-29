@@ -57,9 +57,9 @@ export default function Proyectos() {
       id: 1,
       titulo: "Sistema de gestión para un polirrubro",
       descripción:
-        "Sistema completo de gestión de inventario y stock desarrollado con React.js y Express.js. Permite la gestión total de productos, categorías, proveedores y movimientos de stock. Incluye funcionalidades de búsqueda avanzada, reportes de inventario y un dashboard intuitivo para el seguimiento en tiempo real del estado del negocio.",
-      imagen: gestion2,
-      imagenes: [
+        "Sistema de gestión desarrollado para un polirrubro de mi localidad, que permite administrar productos, ventas, compras, categorías y proveedores de forma centralizada. Incluye funcionalidades de búsqueda avanzada, reportes de inventario y un dashboard que facilita el seguimiento en tiempo real del estado del negocio, ayudando a mejorar el control del stock y la toma de decisiones." ,
+        imagen: gestion2,
+        imagenes: [
         gestion2,
         gestion3,
         gestion4,

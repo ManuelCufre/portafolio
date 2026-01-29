@@ -81,7 +81,7 @@ export default function Servicios() {
                     key={servicio.nombre}
                     variants={itemVariants}
                     whileHover={{ scale: 1.02, y: -4 }}
-                    className="flex flex-col items-center gap-5 bg-[#F2F2F2] dark:bg-[#242424] h-full !rounded-sm w-full !py-4 !px-4 xl:!py-6 xl:!px-10 2xl:!py-10 2xl:!px-14 !border-1 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
+                    className="flex flex-col items-center gap-5 bg-[#F2F2F2] dark:bg-[#242424] h-full !rounded-sm w-full !py-4 !px-4 xl:!py-6 xl:!px-10 2xl:!py-10 2xl:!px-14 !border-1 !border-gray-300 dark:!border-[#383838] dark:hover:!border-[#404040] dark:hover:shadow-gray-700"
                   >
                     <div className="flex justify-center items-center !p-4  2xl:!p-6 rounded-full bg-gray-200 dark:bg-[#383838]">
                         {servicio.icono}

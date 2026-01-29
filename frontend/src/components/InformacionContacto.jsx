@@ -68,9 +68,7 @@ export default function InformacionContacto() {
           </span>
         </div>
         <p className="!text-xs lg:!text-sm 2xl:!text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-          Estoy siempre abierto a discutir nuevas oportunidades, proyectos
-          interesantes o simplemente charlar sobre tecnología. No dudes en
-          contactarme.
+          Estoy disponible para conversar sobre nuevas oportunidades, proyectos y colaboraciones. Si tenés una idea o necesitás apoyo en un proyecto tecnológico, no dudes en contactarme.
         </p>
       </div>
 
@@ -117,8 +115,7 @@ export default function InformacionContacto() {
           Disponibilidad
         </h3>
         <p className="!text-xs 2xl:!text-sm text-blue-800 dark:text-blue-300 leading-relaxed mb-3">
-          Actualmente disponible para proyectos freelance y oportunidades de
-          internado.
+          Actualmente disponible para proyectos freelance y oportunidades laborales en tecnología.
         </p>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-teal-500"></span>

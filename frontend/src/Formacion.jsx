@@ -8,7 +8,7 @@ const educacion = [
     periodo: "2022 - 2025 (Graduado)",
     descripcion:
       "Estudio de tecnologías de desarrollo de software, bases de datos y redes. Formación en programación, análisis de sistemas y gestión de proyectos informáticos.",
-    habilidades: ["Java", "Python", "JavaScript", "React", "HTML", "CSS"],
+    habilidades: ["HTML", "CSS", "JavaScript", "Python", "Java", "MySQL", "Redes" ],
   },
   {
     nombre: "Academia de Desarrollo Tecnológico",

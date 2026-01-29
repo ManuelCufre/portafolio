@@ -54,7 +54,7 @@ export default function Inicio() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full flex flex-col gap-6 justify-center !mt-26 md:!mt-0 items-center lg:!mt-28 rounded-2xl bg-[#FAFAFA] dark:bg-[#1E1E1F]"
+        className="w-full flex flex-col gap-6 justify-center !mt-20 md:!mt-0 items-center lg:!mt-28 rounded-2xl bg-[#FAFAFA] dark:bg-[#1E1E1F]"
       >
         <div className="flex gap-8 items-center nata-sans w-full">
           <div className="w-[100%]">
@@ -77,13 +77,7 @@ export default function Inicio() {
                 variants={itemVariants}
                 className="text-gray-700 dark:text-gray-300 !text-[0.9rem] md:!text-[1rem] 2xl:!text-[1.2rem]"
               >
-                Soy una analista de sistemas especializado en el desarrollo web
-                Full-Stack, que disfruta transformar ideas en aplicaciones web
-                modernas, dinámicas y fáciles de usar. Mi objetivo en crear
-                aplicaciones que combinan funcionalidad, rendimiento y diseño
-                atractivo, priorizando siempre la experiencia del usuario. Mi
-                enfoque está en desarrollar soluciones escalables y eficientes
-                que aporten valor real a cada proyecto.
+                Soy un Analista de Sistemas, con conocimientos en desarrollo web Full-Stack y administración de sistemas. Trabajo en el diseño, desarrollo y mantenimiento de aplicaciones web modernas, gestionando tanto el código como la infraestructura donde se ejecutan. Mi objetivo es la creación de soluciones funcionales, estables y escalables, poniendo especial atención en el rendimiento, la seguridad y la experiencia del usuario, con el fin de aportar valor real a cada proyecto.
               </motion.p>
             </motion.div>
 
@@ -97,11 +91,11 @@ export default function Inicio() {
 
 
                   {/* GitHub */}
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ManuelCufre" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     whileHover={{ y: -4, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="!bg-transparent !border !border-teal-600 !py-1.5 !px-3 md:rounded-sm md:flex md:items-center md:gap-2 rounded-full md:rounded-sm flex items-center justify-center md:justify-start cursor-pointer w-10 h-10 md:w-auto md:h-auto"
+                    className="!bg-transparent !border !border-teal-600 !py-1.5 !px-3 md:flex md:items-center md:gap-2 rounded-full md:rounded-sm flex items-center justify-center md:justify-start cursor-pointer w-10 h-10 md:w-auto md:h-auto"
                   >
                     <FiGithub className="text-teal-600 !text-sm xl:!text-[0.9rem]" />
                     <span className="hidden md:inline !text-sm 2xl:!text-[0.9rem] text-teal-600">
@@ -112,7 +106,7 @@ export default function Inicio() {
                
 
                  {/* LinkedIn */}
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/manuel-agustin-cufre" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     whileHover={{ y: -4, scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -155,7 +149,7 @@ export default function Inicio() {
               </div>
             </motion.div>
             <motion.div
-              className="hidden md:flex w-full justify-center items-center !mt-10"
+              className="hidden md:flex w-full justify-center items-center !mt-18"
               animate={{ y: [0, 10, 0] }}
               transition={{
                 duration: 1.5,
