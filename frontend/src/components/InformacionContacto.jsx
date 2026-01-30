@@ -115,7 +115,7 @@ export default function InformacionContacto() {
           Disponibilidad
         </h3>
         <p className="!text-xs 2xl:!text-sm text-blue-800 dark:text-blue-300 leading-relaxed mb-3">
-          Actualmente disponible para proyectos freelance y oportunidades laborales en tecnología.
+          Actualmente disponible para proyectos freelance y oportunidades laborales en IT.
         </p>
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
